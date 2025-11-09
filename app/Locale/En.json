@@ -12,7 +12,7 @@
         "business": "Business",
         "contact": "Contact",
         "bookVisit": "Get in Touch"
-     },
+    },
     "hero": {
         "title1": "Scale your",
         "title2": "business growth & revenue ",
@@ -110,37 +110,83 @@
                 "tagline": "Turning green visions into reality"
             },
             "items": {
-                "consult": { "title": "Agricultural project execution and consultancy" },
-                "design": { "title": "Garden and landscape design." },
-                "om": { "title": "Garden operation and maintenance" },
-                "irrigation": { "title": "Irrigation system installation." },
-                "soil": { "title": "Soil treatment and tree planting." },
-                "construction": { "title": "Agricultural construction for pathways, lakes, and more" }
+                "consult": {
+                    "title": "Agricultural project execution and consultancy"
+                },
+                "design": {
+                    "title": "Garden and landscape design."
+                },
+                "om": {
+                    "title": "Garden operation and maintenance"
+                },
+                "irrigation": {
+                    "title": "Irrigation system installation."
+                },
+                "soil": {
+                    "title": "Soil treatment and tree planting."
+                },
+                "construction": {
+                    "title": "Agricultural construction for pathways, lakes, and more"
+                }
             }
         },
         "smart": {
             "items": {
-                "parking": { "title": "Parking Management System" },
-                "petrol": { "title": "Petrol Station Management System." },
-                "asset": { "title": "Asset Management System (Product QR Code Generator)" },
-                "access": { "title": "Access & Visitor Management System" },
-                "metering": { "title": "Smart metering (electricity, water, gas) with real-time monitoring" },
-                "energyAI": { "title": "Energy optimization using AI (predictive usage patterns peak load shifting)" },
-                "lighting": { "title": "Smart lighting systems (motion/occupancy sensors, daylight harvesting)" },
-                "iaq": { "title": "Indoor air quality (IAQ) monitoring (CO2, VOCs, particulate matter)" },
-                "renewable": { "title": "Renewable energy integration (solar panels, energy storage tracking)" },
-                "carbon": { "title": "Carbon footprint dashboard (energy, water, and waste impact combined)" },
-                "kpi": { "title": "Dashboard and KPI reporting -including stakeholders- Services" },
-                "ai": { "title": "AI-driven insights (forecasting costs, predicting failures, space optimization)" }
+                "parking": {
+                    "title": "Parking Management System"
+                },
+                "petrol": {
+                    "title": "Petrol Station Management System."
+                },
+                "asset": {
+                    "title": "Asset Management System (Product QR Code Generator)"
+                },
+                "access": {
+                    "title": "Access & Visitor Management System"
+                },
+                "metering": {
+                    "title": "Smart metering (electricity, water, gas) with real-time monitoring"
+                },
+                "energyAI": {
+                    "title": "Energy optimization using AI (predictive usage patterns peak load shifting)"
+                },
+                "lighting": {
+                    "title": "Smart lighting systems (motion/occupancy sensors, daylight harvesting)"
+                },
+                "iaq": {
+                    "title": "Indoor air quality (IAQ) monitoring (CO2, VOCs, particulate matter)"
+                },
+                "renewable": {
+                    "title": "Renewable energy integration (solar panels, energy storage tracking)"
+                },
+                "carbon": {
+                    "title": "Carbon footprint dashboard (energy, water, and waste impact combined)"
+                },
+                "kpi": {
+                    "title": "Dashboard and KPI reporting -including stakeholders- Services"
+                },
+                "ai": {
+                    "title": "AI-driven insights (forecasting costs, predicting failures, space optimization)"
+                }
             }
         },
         "civil": {
             "items": {
-                "carpentry": { "title": "Carpentry" },
-                "ceilings": { "title": "Ceilings" },
-                "asset": { "title": "Asset Management System (Product QR Code Generator)" },
-                "drywall": { "title": "Drywall" },
-                "painting": { "title": "Painting" }
+                "carpentry": {
+                    "title": "Carpentry"
+                },
+                "ceilings": {
+                    "title": "Ceilings"
+                },
+                "asset": {
+                    "title": "Asset Management System (Product QR Code Generator)"
+                },
+                "drywall": {
+                    "title": "Drywall"
+                },
+                "painting": {
+                    "title": "Painting"
+                }
             }
         },
         "softFacility": {
@@ -297,6 +343,21 @@
             "lighting": "Lighting Design",
             "consultation": "Consultation",
             "installation": "Installation"
-        }
+        },
+         "formTitle": "Get In Touch",
+        "formSubtitle": "We will provide all the necessary advice, designs, and additions. We are the best.",
+        "fullName": "Full name",
+        "phone": "Phone number",
+        "email": "Email Address",
+        "service": "Service",
+        "services": {
+            "consulting": "Consulting",
+            "development": "Development",
+            "support": "Support",
+            "design": "Design",
+            "integration": "Integration"
+        },
+        "message": "Your message",
+        "send": "Send"
     }
 }

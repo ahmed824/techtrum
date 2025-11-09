@@ -35,7 +35,7 @@ export function DesktopNav({ navLinks, activeSection, t }) {
         aria-label="User actions"
       >
         <Link
-          href={`/${currentLang}/book`}
+          href={`/${currentLang}/contact`}
           className={classNames(
             "bg-[#246BFD] text-white px-6 py-2.5 rounded-full transition font-bold shadow-lg",
             "hover:bg-[#12283F] focus:outline-none focus:ring-2 focus:ring-[#246BFD] focus:ring-offset-2 focus:ring-offset-[#090919]"

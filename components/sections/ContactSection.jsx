@@ -42,7 +42,7 @@ export function ContactSection({ t }) {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[630px] py-12 sm:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center min-h-[630px] py-12 sm:py-16">
           {/* Left Content */}
           <div className="text-white space-y-5 sm:space-y-6  text-center lg:text-left px-2 sm:px-0 w-full md:max-w-[75%]">
             {/* Badge */}
@@ -69,12 +69,12 @@ export function ContactSection({ t }) {
           <div className="relative -top-8 sm:-top-12 lg:-top-24 w-full">
             <form
               onSubmit={handleSubmit}
-              className="bg-white rounded-2xl sm:rounded-3xl md:pb-[50px] md:px-[32px] lg:pb-[70px] lg:px-[48px] shadow-[0_0_16px_rgba(0,0,0,0.16)] max-w-full sm:max-w-xl md:max-w-2xl mx-auto lg:ml-auto md:pt-16 lg:pt-24 w-full p-6 sm:p-8"
+              className="bg-white rounded-2xl sm:rounded-3xl md:pb-[50px] md:px-[32px] lg:pb-[70px]  shadow-[0_0_16px_rgba(0,0,0,0.16)] max-w-full sm:max-w-xl md:max-w-3xl mx-auto lg:ml-auto md:pt-16 lg:pt-24 w-full p-6 sm:p-8"
             >
-              <h2 className="text-xl sm:text-2xl font-bold text-black mb-3 text-center lg:text-left">
+              <h2 className="text-xl sm:text-3xl font-bold text-black mb-3 text-center lg:text-start">
                 {t("contact.formTitle") || "Get In Touch"}
               </h2>
-              <p className="text-gray-600 text-sm sm:text-base mb-6 sm:mb-8 text-center lg:text-left">
+              <p className="text-gray-500 font-light text-base sm:text-base mb-6 sm:mb-6 text-center lg:text-start">
                 {t("contact.formSubtitle") ||
                   "We will provide all the necessary advice, designs, and additions. We are the best."}
               </p>

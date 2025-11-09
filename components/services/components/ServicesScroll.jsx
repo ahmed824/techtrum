@@ -29,7 +29,7 @@ const servicesData = [
     title: "Network Performance",
     description:
       "capabilities in Benchmarking and Performance Optimization Strategies for Network Capacity Planning, Scalability, RF Interference Mitigation, Band Steering, Load 5G Network Slicing Optimization can scale up your growth on very Balancing",
-  }
+  },
 ];
 
 export default function ServicesScroll() {
@@ -37,6 +37,7 @@ export default function ServicesScroll() {
   const containerRef = useRef(null);
   const imageContainerRef = useRef(null);
   const imageRef = useRef(null);
+  const blueLayerRef = useRef(null);
   const itemsRef = useRef([]);
 
   useEffect(() => {
@@ -61,6 +62,21 @@ export default function ServicesScroll() {
 
       function animateImage(i) {
         setActiveIndex(i);
+
+        // Animate blue layer
+        gsap.to(blueLayerRef.current, {
+          opacity: 0,
+          scale: 0.95,
+          duration: 0.3,
+          onComplete: () =>
+            gsap.to(blueLayerRef.current, {
+              opacity: 1,
+              scale: 1,
+              duration: 0.4,
+            }),
+        });
+
+        // Animate image
         gsap.to(imageRef.current, {
           opacity: 0,
           y: 20,
@@ -75,10 +91,10 @@ export default function ServicesScroll() {
   }, []);
 
   return (
-    <div className="bg-gray-50 min-h-screen">
-      <div className="container mx-auto px-4 max-w-7xl pt-16 pb-8">
-        <div className="flex items-center gap-3 bg-white rounded-2xl shadow-sm px-6 py-4 w-fit border border-gray-100">
-          <div className="w-10 h-10 bg-blue-50 rounded-lg grid place-items-center">
+    <div className="container py-20 bg-gray-50 min-h-screen">
+      <div className=" mx-auto flex justify-end -mb-12">
+        <div className="flex items-center gap-3 bg-white rounded-full shadow-sm px-6 py-1 w-fit border border-gray-100">
+          <div className="w-10 h-10 rounded-lg grid place-items-center">
             <svg
               className="w-6 h-6 text-blue-600"
               fill="none"
@@ -107,25 +123,32 @@ export default function ServicesScroll() {
               className="h-screen grid place-items-center"
             >
               <div className="relative w-full">
-                <div className="relative rounded-[40px] bg-gradient-to-br from-blue-600 via-blue-500 to-blue-600 p-[6px]">
-                  <div className="rounded-[36px] overflow-hidden bg-white">
+                {/* Blue background layer behind image - extends to left */}
+                <div
+                  ref={blueLayerRef}
+                  className="absolute -top-4 bottom-20 -left-6 right-6 h-[550px] rounded-[26px] bg-[#246BFD] z-0"
+                />
+
+                {/* Image container */}
+                <div className="relative z-10 p-[6px]">
+                  <div className="rounded-[26px] overflow-hidden bg-white">
                     <img
                       ref={imageRef}
                       src={servicesData[activeIndex].previewImage}
                       alt={servicesData[activeIndex].title}
-                      className="w-full aspect-[4/3.2] object-cover"
+                      className="w-full aspect-[4/4.3] object-cover rounded-[25px]"
                     />
                   </div>
                 </div>
 
-                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-white rounded-[32px] grid place-items-center shadow-2xl border-[6px] border-gray-100">
-                  <span className="text-7xl font-bold text-gray-900">
-                    {String(activeIndex + 1).padStart(2, "0")}
-                  </span>
+                {/* Number badge */}
+                <div className="absolute  text-7xl font-bold bottom-4 -left-20 text-black ">
+                  {String(activeIndex + 1).padStart(2, "0")}
                 </div>
 
+                {/* Grid pattern */}
                 <svg
-                  className="absolute -bottom-24 left-28 w-64 h-32 opacity-10"
+                  className="absolute -bottom-24 left-28 w-64 h-32 opacity-10 z-20"
                   viewBox="0 0 256 128"
                   fill="none"
                 >
@@ -156,7 +179,7 @@ export default function ServicesScroll() {
             </div>
 
             <div className="relative space-y-40 py-24">
-              <div className="absolute left-[7px] top-24 bottom-0 w-[2px] bg-[#D1E6FF]" />
+              <div className="absolute left-[7px] top-28 bottom-20 w-[1px] bg-[#246BFD]" />
               {servicesData.map((service, i) => (
                 <div
                   key={service.id}
@@ -165,26 +188,33 @@ export default function ServicesScroll() {
                 >
                   <div className="relative pt-3 z-10">
                     <div
-                      className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                      className={`w-4 h-4 rounded-full border border-[#246BFD] transition-all duration-300 ${
                         activeIndex === i
-                          ? "bg-[#246BFD] ring-4 ring-[#246BFD]/20 scale-110"
+                          ? "bg-[#246BFD]  ring-4 ring-[#246BFD]/20 scale-110"
                           : "bg-[#D1E6FF]"
                       }`}
                     />
                   </div>
                   <div className="pt-1">
-                    <div className="flex items-center gap-4 mb-4">
-                      <span
-                        className={`text-5xl font-bold transition-colors ${
-                          activeIndex === i ? "text-[#246BFD]" : "text-gray-900"
+                    <div className="flex items-center gap-4 mb-4 relative">
+                      {/* Number Badge (Square Background) */}
+                      <div
+                        className={`absolute left-9 top-[70%] -translate-y-1/2 w-12 h-12 rounded-sm transition-all duration-300 ${
+                          activeIndex === i ? "bg-[#246BFD]" : "bg-[#D1E6FF]"
                         }`}
-                      >
+                      />
+
+                      {/* Number */}
+                      <span className="relative text-6xl font-bold text-black pl-2">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <h3 className="text-2xl font-bold text-gray-900">
+
+                      {/* Title */}
+                      <h3 className="text-2xl font-bold text-black relative z-10">
                         {service.title}
                       </h3>
                     </div>
+
                     <p className="text-gray-600 text-[15px] leading-relaxed pl-[72px] max-w-xl">
                       {service.description}
                     </p>

@@ -1,0 +1,301 @@
+{
+    "topBar": {
+        "phone": "+966 55 444 2151",
+        "email": "info@techtrum.com",
+        "arabic": "العربية",
+        "english": "English"
+    },
+    "navbar": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "business": "Business",
+        "contact": "Contact",
+        "bookVisit": "Get in Touch"
+     },
+    "hero": {
+        "title1": "Scale your",
+        "title2": "business growth & revenue ",
+        "title3": "to the ",
+        "title4": "next level",
+        "subtitle": "Comis a specialized consulting  firm Offering advisory services in modern technologies and elecommunications within the business sector",
+        "description": "is a specialized consulting  firm Offering advisory services in modern technologies and elecommunications within the business sector",
+        "searchPlaceholder": "Find your service now",
+        "category": "Category",
+        "search": "Search"
+    },
+    "whoWeAre": {
+        "badge": "About Us",
+        "title": "WHO WE ARE",
+        "subtitle": "WHO WE ARE",
+        "description": "Fixer is a Saudi-based company leading the transformation of operations and facility management through cutting-edge technology, deep industry expertise, and sustainable solutions. With decades of combined experience",
+        "readMore": "Read more"
+    },
+    "services": {
+        "badge": "Values",
+        "title": "Value Chains",
+        "subtitle": "We carries lots of expertise and accumulative experience in different sectors that become as value chain",
+        "service1": "Soft Facility Management",
+        "service2": "Hard Facility Management",
+        "service3": "Landscaping",
+        "service4": "Civil Maintenance & Repairs",
+        "service5": "Fixer Platform",
+        "soft": {
+            "header": {
+                "title": "Service",
+                "blueTitle": "SOFT",
+                "subtitle": "Facility Management",
+                "tagline": "We made bridges with many Local and International firms to assure bringing the latest and variety of smart solutions .into market with professional level"
+            },
+            "items": {
+                "waste": {
+                    "title": "Waste management services",
+                    "description": "Sustainable disposal and recycling solutions."
+                },
+                "cleaning": {
+                    "title": "Cleaning & Polishing services",
+                    "description": "Sparkling spaces with high hygiene standards."
+                },
+                "facade": {
+                    "title": "Facade Cleaning services",
+                    "description": "Professional exterior care for long-lasting appeal."
+                },
+                "security": {
+                    "title": "Security services",
+                    "description": "Certified teams ensuring safety and peace of mind."
+                },
+                "pest": {
+                    "title": "Pest Control services",
+                    "description": "Smart and eco-friendly pest management."
+                }
+            }
+        },
+        "capabilities": {
+            "title": "Design For The Future",
+            "description": "Techtrum Capabilities in Facility Management"
+        },
+        "hard": {
+            "header": {
+                "title": "Service",
+                "blueTitle": "HARD",
+                "subtitle": "Facility Management",
+                "tagline": "End-to-end technical solutions that keep your operations running seamlessly"
+            },
+            "items": {
+                "mep": {
+                    "title": "Electrical, HVAC & Mechanical Systems",
+                    "description": "Installation, preventive maintenance, and emergency."
+                },
+                "fire": {
+                    "title": "Fire Fighting & Detection Systems",
+                    "description": "Integrated fire safety solutions for maximum protection."
+                },
+                "ac": {
+                    "title": "Air Conditioning services"
+                },
+                "smart": {
+                    "title": "Smart Systems",
+                    "description": "CCTV, access control, queuing, cabling, networking, audio-visual, and BMS for smart buildings, public address & AV systems, smart lighting"
+                },
+                "pm": {
+                    "title": "Project management & technical support",
+                    "description": "Expertise from design to execution."
+                }
+            }
+        },
+        "land": {
+            "header": {
+                "title": "Service",
+                "blueTitle": "Landscaping",
+                "tagline": "Turning green visions into reality"
+            },
+            "items": {
+                "consult": { "title": "Agricultural project execution and consultancy" },
+                "design": { "title": "Garden and landscape design." },
+                "om": { "title": "Garden operation and maintenance" },
+                "irrigation": { "title": "Irrigation system installation." },
+                "soil": { "title": "Soil treatment and tree planting." },
+                "construction": { "title": "Agricultural construction for pathways, lakes, and more" }
+            }
+        },
+        "smart": {
+            "items": {
+                "parking": { "title": "Parking Management System" },
+                "petrol": { "title": "Petrol Station Management System." },
+                "asset": { "title": "Asset Management System (Product QR Code Generator)" },
+                "access": { "title": "Access & Visitor Management System" },
+                "metering": { "title": "Smart metering (electricity, water, gas) with real-time monitoring" },
+                "energyAI": { "title": "Energy optimization using AI (predictive usage patterns peak load shifting)" },
+                "lighting": { "title": "Smart lighting systems (motion/occupancy sensors, daylight harvesting)" },
+                "iaq": { "title": "Indoor air quality (IAQ) monitoring (CO2, VOCs, particulate matter)" },
+                "renewable": { "title": "Renewable energy integration (solar panels, energy storage tracking)" },
+                "carbon": { "title": "Carbon footprint dashboard (energy, water, and waste impact combined)" },
+                "kpi": { "title": "Dashboard and KPI reporting -including stakeholders- Services" },
+                "ai": { "title": "AI-driven insights (forecasting costs, predicting failures, space optimization)" }
+            }
+        },
+        "civil": {
+            "items": {
+                "carpentry": { "title": "Carpentry" },
+                "ceilings": { "title": "Ceilings" },
+                "asset": { "title": "Asset Management System (Product QR Code Generator)" },
+                "drywall": { "title": "Drywall" },
+                "painting": { "title": "Painting" }
+            }
+        },
+        "softFacility": {
+            "title": "Soft Facility Management",
+            "description": "We made bridges with many Local and International firms to assure bringing the latest and variety of smart solutions .into market with professional level",
+            "details": "Details"
+        },
+        "hardFacility": {
+            "title": "Hard Facility Management",
+            "description": "End-to-end technical solutions that keep your operations running seamlessly",
+            "details": "Details"
+        },
+        "landscaping": {
+            "title": "Landscaping",
+            "description": "Turning green visions into reality",
+            "details": "Details"
+        },
+        "civilMaintenance": {
+            "title": "Civil Maintenance & Repairs",
+            "description": "End-to-end technical solutions that keep your operations running seamlessly",
+            "details": "Details"
+        }
+    },
+    "stats": {
+        "title": "We are The Best in Industry",
+        "description": "Top companies trust Digit to expertly match them with high-quality, vetted talent for their most critical projects.",
+        "getRequest": "Get Request Now",
+        "fixerHands": "Fixer Hands",
+        "yearsExperience": "Years experience",
+        "happyClients": "Happy Clients",
+        "projectsCompleted": "Projects Completed"
+    },
+    "whyFixer": {
+        "title": "Why Fixer",
+        "subtitle": "Why Fixer",
+        "commitment": {
+            "title": "Commitment",
+            "description": "to sustainability"
+        },
+        "protecting": {
+            "title": "Protecting and enhancing",
+            "description": "asset value"
+        },
+        "raising": {
+            "title": "Raising quality",
+            "description": "of life standards"
+        },
+        "smart": {
+            "title": "Smart",
+            "description": "use of technology"
+        },
+        "always": {
+            "title": "Always",
+            "description": "responsive and accessible"
+        }
+    },
+    "partners": {
+        "title": "Our partner",
+        "subtitle": "Our partner"
+    },
+    "testimonials": {
+        "title": "Hear about us from our Client",
+        "subtitle": "Hear about us from our Client",
+        "quote": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+        "author": "Mohammed Mansi",
+        "position": "CEO Smart Cat",
+        "q2": "The service quality exceeded our expectations. Professional team and timely delivery made our project a success.",
+        "a2": "Sarah Johnson",
+        "p2": "Operations Manager",
+        "q3": "Outstanding customer support and attention to detail. They truly understand what clients need and deliver accordingly.",
+        "a3": "Michael Chen",
+        "p3": "Business Owner",
+        "q4": "Highly recommend their services! The team went above and beyond to ensure everything was perfect.",
+        "a4": "Emily Rodriguez",
+        "p4": "Marketing Director"
+    },
+    "cta": {
+        "title": "Fixer Now",
+        "subtitle": "Because every home deserves a perfect fix",
+        "description": "Maintaining the asset value of buildings and reducing operational costs.",
+        "contactUs": "Contact us"
+    },
+    "footer": {
+        "description": "an engineering consulting firm specialized in providing advisory services to manage",
+        "newsletterPlaceholder": "Write your email adress",
+        "send": "Send",
+        "copyright": "all copy right by techtrum 2025",
+        "newsletterTitle": "Subscribe To Our Newsletter",
+        "emailPlaceholder": "Enter your email"
+    },
+    "mostServices": {
+        "title": "Most Requested Services",
+        "subtitle": "Most Requested Services"
+    },
+    "clients": {
+        "title": "Our Clients"
+    },
+    "buttons": {
+        "getNow": "Get now",
+        "getServiceNow": "Get Service Now",
+        "send": "Send"
+    },
+    "vision": {
+        "title": "Our Vision",
+        "text": "To be a leading provider of outstanding services in our field through continuous innovation and high quality."
+    },
+    "mission": {
+        "title": "Our Mission",
+        "text": "Deliver innovative solutions that delight our clients and contribute to sustainable development."
+    },
+    "message": {
+        "title": "Our Values",
+        "text": "Integrity, collaboration, excellence, and teamwork to achieve our shared goals."
+    },
+    "pages": {
+        "about": {
+            "title": "About Us"
+        }
+    },
+    "book": {
+        "title": "Book Visit",
+        "header": "Book Visit",
+        "subtitle": "Reach out for inquiries, partnerships, or support. Our team will respond within 24 hours.",
+        "placeholders": {
+            "fullName": "Full name",
+            "phone": "Phone number",
+            "email": "Email address",
+            "service": "Select Service",
+            "location": "Location",
+            "time": "Time",
+            "message": "Your message"
+        }
+    },
+    "contact": {
+        "badge": "Design For The Future",
+        "title": "Get In Touch",
+        "header": "Scale your business & revenue to the next",
+        "subtitle": "In today's competitive business, the demand for efficient and cost-effective IT solutions has never been more critical.",
+        "getInTouch": "Get in Touch",
+        "placeholders": {
+            "fullName": "Full name",
+            "phone": "Phone number",
+            "email": "Email address",
+            "service": "Select Service",
+            "message": "Your message"
+        },
+        "contactInfo": {
+            "phone": "Phone",
+            "email": "Email",
+            "address": "Address"
+        },
+        "serviceOptions": {
+            "lighting": "Lighting Design",
+            "consultation": "Consultation",
+            "installation": "Installation"
+        }
+    }
+}

@@ -1,0 +1,41 @@
+export const Services = ({ t }) => [{
+        id: 1,
+        title: t("services.softFacility.title"),
+        description: t("services.softFacility.description"),
+        details: t("services.softFacility.details"),
+        image: "/services-1.png",
+        icon: "/services-icon-1.svg",
+    },
+    {
+        id: 2,
+        title: t("services.softFacility.title"),
+        description: t("services.softFacility.description"),
+        details: t("services.softFacility.details"),
+        image: "/services-2.png",
+        icon: "/services-icon-2.svg",
+    },
+    {
+        id: 3,
+        title: t("services.softFacility.title"),
+        description: t("services.softFacility.description"),
+        details: t("services.softFacility.details"),
+        image: "/services-3.png",
+        icon: "/services-icon-3.svg",
+    },
+    {
+        id: 4,
+        title: t("services.softFacility.title"),
+        description: t("services.softFacility.description"),
+        details: t("services.softFacility.details"),
+        image: "/services-1.png",
+        icon: "/services-icon-4.svg",
+    },
+    {
+        id: 5,
+        title: t("services.softFacility.title"),
+        description: t("services.softFacility.description"),
+        details: t("services.softFacility.details"),
+        image: "/services-2.png",
+        icon: "/services-icon-5.svg",
+    }
+];

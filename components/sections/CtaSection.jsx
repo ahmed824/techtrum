@@ -3,11 +3,11 @@ import Image from "next/image";
 export function CtaSection({ t }) {
   return (
     <section
-      className="py-16 sm:pt-20 lg:pt-28 md:pb-48 bg-white relative overflow-hidden"
+      className="py-16 sm:pt-20 lg:pt-24 md:pb-48 bg-white relative overflow-hidden"
       data-aos="fade-up"
     >
       {/* Left Decorative Image (Normal) */}
-      <div className="absolute top-0 -left-14 w-full max-w-[600px] lg:max-w-[800px] h-full pointer-events-none hidden lg:block">
+      <div className="absolute top-0 -left-72 w-full max-w-[600px] lg:max-w-[800px] h-full pointer-events-none hidden lg:block">
         <Image
           src="/Mask Group 36.png"
           alt="Decorative background"
@@ -18,7 +18,7 @@ export function CtaSection({ t }) {
       </div>
 
       {/* Right Decorative Image (Flipped Horizontally) */}
-      <div className="absolute top-0 -right-14 w-full max-w-[600px] h-full pointer-events-none hidden lg:block">
+      <div className="absolute top-0 -right-72 w-full max-w-[600px] h-full pointer-events-none hidden lg:block">
         <Image
           src="/Mask Group 36.png"
           alt="Decorative background"
@@ -53,7 +53,7 @@ export function CtaSection({ t }) {
 
           {/* Description */}
           <p
-            className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-24"
             data-aos="fade-up"
             data-aos-delay="300"
           >

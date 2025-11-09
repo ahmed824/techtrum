@@ -1,6 +1,4 @@
 "use client";
-import { useState } from "react";
-import { FaRegUser } from "react-icons/fa";
 import { classNames } from "@/utils/classNames";
 import { NavLink } from "./NavLink";
 import Link from "next/link";
@@ -16,7 +14,10 @@ export function DesktopNav({ navLinks, activeSection, t }) {
   return (
     <>
       {/* Desktop Links - Logical order in navigation */}
-      <nav className="hidden lg:flex items-center gap-6" aria-label="Main navigation links">
+      <nav
+        className="hidden lg:flex items-center gap-24"
+        aria-label="Main navigation links"
+      >
         {navLinks.map(({ id, label, href }) => (
           <NavLink
             key={id}
@@ -28,8 +29,12 @@ export function DesktopNav({ navLinks, activeSection, t }) {
       </nav>
 
       {/* Right Buttons - Secondary actions in logical order */}
-      <div className="hidden lg:flex items-center gap-3" role="group" aria-label="User actions">
-        <Link 
+      <div
+        className="hidden lg:flex items-center gap-3"
+        role="group"
+        aria-label="User actions"
+      >
+        <Link
           href={`/${currentLang}/book`}
           className={classNames(
             "bg-[#246BFD] text-white px-6 py-2.5 rounded-full transition font-bold shadow-lg",

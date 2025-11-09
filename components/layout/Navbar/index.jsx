@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaBars } from "react-icons/fa";
@@ -15,36 +15,51 @@ export function Navbar() {
     const seg = pathname?.split("/").filter(Boolean)[0];
     return seg === "ar" ? "ar" : "en";
   })();
-  const [activeSection, setActiveSection] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
-    const handleScroll = () => {
-      let current = "home";
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 100;
-        if (window.scrollY >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
-      setActiveSection(current);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const navLinks = [
     { id: "home", label: t("navbar.home"), href: `/${currentLang}` },
     { id: "about", label: t("navbar.about"), href: `/${currentLang}/about` },
-    { id: "services", label: t("navbar.services"), href: `/${currentLang}/service-1` },
-    { id: "contact", label: t("navbar.contact"), href: `/${currentLang}/contact` },
+    {
+      id: "services",
+      label: t("navbar.services"),
+      href: `/${currentLang}/service-1`,
+    },
+    {
+      id: "contact",
+      label: t("navbar.contact"),
+      href: `/${currentLang}/contact`,
+    },
   ];
 
+  // Determine active link based on current pathname
+  const getActiveLink = () => {
+    // Normalize pathname by removing trailing slash
+    const normalizedPath =
+      pathname?.endsWith("/") && pathname.length > 1
+        ? pathname.slice(0, -1)
+        : pathname;
+
+    // Check exact match first
+    const exactMatch = navLinks.find((link) => link.href === normalizedPath);
+    if (exactMatch) return exactMatch.id;
+
+    // Check if pathname starts with any link href (for nested routes)
+    const partialMatch = navLinks.find((link) => {
+      if (link.href === `/${currentLang}`) {
+        // For home, only match exact path
+        return normalizedPath === `/${currentLang}` || normalizedPath === "/";
+      }
+      return normalizedPath?.startsWith(link.href);
+    });
+
+    return partialMatch?.id || "home";
+  };
+
+  const activeSection = getActiveLink();
+
   return (
-    <nav 
+    <nav
       className="bg-white relative z-50 "
       aria-label={t("navbar.home") || "Main navigation"}
       role="navigation"
@@ -69,21 +84,23 @@ export function Navbar() {
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
-        <DesktopNav navLinks={navLinks} activeSection={activeSection} t={t} />
+        <div className="flex gap-14">
+          {/* Desktop Navigation */}
+          <DesktopNav navLinks={navLinks} activeSection={activeSection} t={t} />
 
-        {/* Mobile Menu Button */}
-        <button
-          type="button"
-          onClick={() => setIsMenuOpen(true)}
-          className="text-white text-2xl lg:hidden hover:text-[#246BFD] focus:outline-none focus:ring-2 focus:ring-[#246BFD] focus:ring-offset-2 focus:ring-offset-[#12283F]"
-          aria-label={t("navbar.menu") || "Open menu"}
-          aria-expanded={isMenuOpen}
-          aria-controls="mobile-menu"
-          tabIndex={0}
-        >
-          <FaBars aria-hidden="true" />
-        </button>
+          {/* Mobile Menu Button */}
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen(true)}
+            className="text-white text-2xl lg:hidden hover:text-[#246BFD] focus:outline-none focus:ring-2 focus:ring-[#246BFD] focus:ring-offset-2 focus:ring-offset-[#12283F]"
+            aria-label={t("navbar.menu") || "Open menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+            tabIndex={0}
+          >
+            <FaBars aria-hidden="true" />
+          </button>
+        </div>
       </div>
 
       {/* Mobile Sidebar */}

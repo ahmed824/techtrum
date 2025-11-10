@@ -44,7 +44,7 @@ export function ContactSection({ t }) {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center min-h-[630px] py-12 sm:py-16">
           {/* Left Content */}
-          <div className="text-white space-y-5 sm:space-y-6  text-center lg:text-left px-2 sm:px-0 w-full md:max-w-[75%]">
+          <div className="text-white space-y-5 sm:space-y-6 mb-24 lg:mb-0 text-center lg:text-left px-2 sm:px-0 w-full lg:max-w-[75%]">
             {/* Badge */}
             <div className="inline-block">
               <span className="bg-[#236BFD] text-white text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-full">

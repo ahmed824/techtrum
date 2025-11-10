@@ -42,12 +42,17 @@ export default function ServicesScroll() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: containerRef.current,
-        start: "top top",
-        end: "bottom bottom",
-        pin: imageContainerRef.current,
-        pinSpacing: false,
+      // Only pin on larger screens
+      const mm = gsap.matchMedia();
+
+      mm.add("(min-width: 1024px)", () => {
+        ScrollTrigger.create({
+          trigger: containerRef.current,
+          start: "top top",
+          end: "bottom bottom",
+          pin: imageContainerRef.current,
+          pinSpacing: false,
+        });
       });
 
       servicesData.forEach((_, i) => {
@@ -91,12 +96,12 @@ export default function ServicesScroll() {
   }, []);
 
   return (
-    <div className="container py-20 bg-gray-50 min-h-screen">
-      <div className=" mx-auto flex justify-end -mb-12">
-        <div className="flex items-center gap-3 bg-white rounded-full shadow-sm px-6 py-1 w-fit border border-gray-100">
-          <div className="w-10 h-10 rounded-lg grid place-items-center">
+    <div className="container py-10 md:py-20 min-h-screen px-4">
+      <div className="mx-auto flex justify-center lg:justify-end mb-8 md:-mb-12">
+        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 bg-white rounded-full shadow-sm px-6 sm:px-10 md:px-14 py-3 sm:py-1 w-fit border border-gray-100">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg grid place-items-center flex-shrink-0">
             <svg
-              className="w-6 h-6 text-blue-600"
+              className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -109,46 +114,63 @@ export default function ServicesScroll() {
               />
             </svg>
           </div>
-          <h2 className="text-xl font-bold text-gray-900">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 text-center sm:text-left">
             Telecommunications & Smart Cities
           </h2>
         </div>
       </div>
 
-      <section ref={containerRef}>
-        <div className="container mx-auto px-4 max-w-7xl pb-20">
-          <div className="grid lg:grid-cols-[45%_55%] gap-16">
+      <section className="relative mt-20 md:mt-32 lg:mt-0" ref={containerRef}>
+        {/* Decorative Pattern Image - Bottom Left, 500px */}
+        <div className="absolute z-0 top-20 -left-20 w-[500px] h-[500px] pointer-events-none opacity-85 hidden lg:block">
+          <img
+            src="/pattern.png"
+            alt="Decorative pattern"
+            className="w-full h-full object-contain object-bottom object-left"
+          />
+        </div>
+        <div className="container mx-auto px-4 max-w-7xl pb-10 md:pb-20 relative">
+          <div className="grid lg:grid-cols-[45%_55%] gap-8 lg:gap-16 xl:gap-20">
             <div
               ref={imageContainerRef}
-              className="h-screen grid place-items-center"
+              className="lg:h-screen grid place-items-center"
             >
-              <div className="relative w-full">
+              <div className="relative w-full max-w-md lg:max-w-none mx-auto">
                 {/* Blue background layer behind image - extends to left */}
                 <div
                   ref={blueLayerRef}
-                  className="absolute -top-4 bottom-20 -left-6 right-6 h-[550px] rounded-[26px] bg-[#246BFD] z-0"
+                  className="absolute -top-2 md:-top-4 bottom-12 md:bottom-20 -left-3 md:-left-6 right-3 md:right-6 h-[400px] sm:h-[500px] md:h-[550px] rounded-[20px] md:rounded-[26px] bg-[#246BFD] z-0"
                 />
 
                 {/* Image container */}
-                <div className="relative z-10 p-[6px]">
-                  <div className="rounded-[26px] overflow-hidden bg-white">
+                <div className="z-10 p-[4px] md:p-[6px]">
+                  {/* Decorative Pattern Image - Bottom Left, 500px */}
+                  <div className="absolute z-0 -bottom-[400px] lg:-bottom-[600px] left-2 md:left-4 w-[300px] lg:w-[470px] h-[600px] lg:h-[990px] pointer-events-none opacity-85 hidden lg:block">
+                    <img
+                      src="/horizental-deocoration.png"
+                      alt="Decorative pattern"
+                      className="w-full h-full object-contain object-bottom object-left"
+                    />
+                  </div>
+
+                  <div className="rounded-[20px] md:rounded-[26px] overflow-hidden bg-white">
                     <img
                       ref={imageRef}
                       src={servicesData[activeIndex].previewImage}
                       alt={servicesData[activeIndex].title}
-                      className="w-full aspect-[4/4.3] object-cover rounded-[25px]"
+                      className="w-full aspect-[4/4.3] object-cover rounded-[20px] md:rounded-[25px]"
                     />
                   </div>
                 </div>
 
                 {/* Number badge */}
-                <div className="absolute  text-7xl font-bold bottom-4 -left-20 text-black ">
+                <div className="absolute text-4xl sm:text-5xl md:text-7xl font-bold bottom-1 md:bottom-2 -left-8 sm:-left-12 md:-left-20 text-black">
                   {String(activeIndex + 1).padStart(2, "0")}
                 </div>
 
                 {/* Grid pattern */}
                 <svg
-                  className="absolute -bottom-24 left-28 w-64 h-32 opacity-10 z-20"
+                  className="absolute -bottom-12 md:-bottom-24 left-16 sm:left-20 md:left-28 w-40 sm:w-48 md:w-64 h-20 sm:h-24 md:h-32 opacity-10 z-20"
                   viewBox="0 0 256 128"
                   fill="none"
                 >
@@ -178,44 +200,44 @@ export default function ServicesScroll() {
               </div>
             </div>
 
-            <div className="relative space-y-40 py-24">
-              <div className="absolute left-[7px] top-28 bottom-20 w-[1px] bg-[#246BFD]" />
+            <div className="relative space-y-20 md:space-y-32 lg:space-y-40 py-12 md:py-16 lg:py-24">
+              <div className="absolute left-[7px] top-14 md:top-20 lg:top-28 bottom-20 md:bottom-32 lg:bottom-40 w-[1px] bg-[#246BFD]" />
               {servicesData.map((service, i) => (
                 <div
                   key={service.id}
                   ref={(el) => (itemsRef.current[i] = el)}
-                  className="relative flex gap-5"
+                  className="relative flex gap-3 md:gap-5"
                 >
-                  <div className="relative pt-3 z-10">
+                  <div className="relative pt-2 md:pt-3 z-10">
                     <div
-                      className={`w-4 h-4 rounded-full border border-[#246BFD] transition-all duration-300 ${
+                      className={`w-3 h-3 md:w-4 md:h-4 rounded-full border border-[#246BFD] transition-all duration-300 ${
                         activeIndex === i
-                          ? "bg-[#246BFD]  ring-4 ring-[#246BFD]/20 scale-110"
+                          ? "bg-[#246BFD] ring-2 md:ring-4 ring-[#246BFD]/20 scale-110"
                           : "bg-[#D1E6FF]"
                       }`}
                     />
                   </div>
                   <div className="pt-1">
-                    <div className="flex items-center gap-4 mb-4 relative">
+                    <div className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-3 md:mb-4 relative">
                       {/* Number Badge (Square Background) */}
                       <div
-                        className={`absolute left-9 top-[70%] -translate-y-1/2 w-12 h-12 rounded-sm transition-all duration-300 ${
+                        className={`absolute left-5 sm:left-7 md:left-9 top-[70%] -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-sm transition-all duration-300 ${
                           activeIndex === i ? "bg-[#246BFD]" : "bg-[#D1E6FF]"
                         }`}
                       />
 
                       {/* Number */}
-                      <span className="relative text-6xl font-bold text-black pl-2">
+                      <span className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black pl-1 md:pl-2">
                         {String(i + 1).padStart(2, "0")}
                       </span>
 
                       {/* Title */}
-                      <h3 className="text-2xl font-bold text-black relative z-10">
+                      <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-black relative z-10 leading-tight">
                         {service.title}
                       </h3>
                     </div>
 
-                    <p className="text-gray-600 text-[15px] leading-relaxed pl-[72px] max-w-xl">
+                    <p className="text-black text-sm sm:text-base md:text-lg lg:text-[20px] leading-relaxed pl-12 sm:pl-14 md:pl-16 lg:pl-[72px] max-w-xl">
                       {service.description}
                     </p>
                   </div>

@@ -44,7 +44,7 @@
             "header": {
                 "title": "Service",
                 "blueTitle": "SOFT",
-                "subtitle": "Facility Management",
+                "subtitle": "Telecommunications & Smart Cities",
                 "tagline": "We made bridges with many Local and International firms to assure bringing the latest and variety of smart solutions .into market with professional level"
             },
             "items": {
@@ -324,7 +324,7 @@
     "contact": {
         "badge": "Design For The Future",
         "title": "Get In Touch",
-        "header": "Scale your business & revenue to the next",
+        "header": "Contact Us",
         "subtitle": "In today's competitive business, the demand for efficient and cost-effective IT solutions has never been more critical.",
         "getInTouch": "Get in Touch",
         "placeholders": {

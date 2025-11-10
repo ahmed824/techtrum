@@ -35,11 +35,12 @@ const cairo = Cairo({
 export const metadata = {
   // ---- Basic ----
   title: {
-    default: "Fixer – Comprehensive Facility Management Solutions",
-    template: "%s | Fixer",
+    default:
+      "Techtrum – Scale Your Business Growth & Revenue to the Next Level",
+    template: "%s | Techtrum",
   },
   description:
-    "Saudi-based leader in facility management. Soft & hard services, landscaping, civil maintenance – all powered by technology & sustainability.",
+    "Techtrum is a specialized consulting firm offering advisory services in modern technologies and telecommunications within the business sector. Scale your business growth and revenue to the next level.",
 
   // ---- Robots & Viewport ----
   robots: {
@@ -56,17 +57,17 @@ export const metadata = {
 
   // ---- Open Graph (Facebook, LinkedIn, WhatsApp…) ----
   openGraph: {
-    title: "Fixer – We Fix It!",
+    title: "Techtrum – Technology & Telecommunications Consulting",
     description:
-      "Integrated & sustainable facility management solutions for Saudi businesses.",
-    url: "https://www.fixerfm.com",
-    siteName: "Fixer Facility Management",
+      "Specialized consulting firm offering advisory services in modern technologies and telecommunications. Scale your business growth & revenue to the next level.",
+    url: "https://www.techrium.com",
+    siteName: "Techtrum",
     images: [
       {
-        url: "https://www.fixerfm.com/og-image.jpg", // 1200×630 recommended
+        url: "https://www.techrium.com/og-image.jpg", // 1200×630 recommended
         width: 1200,
         height: 630,
-        alt: "Fixer Facility Management – We Fix It!",
+        alt: "Techtrum – Technology & Telecommunications Consulting",
       },
     ],
     locale: "en_US",
@@ -76,19 +77,19 @@ export const metadata = {
   // ---- Twitter Cards ----
   twitter: {
     card: "summary_large_image",
-    site: "@fixerfm",
-    title: "Fixer – We Fix It!",
+    site: "@techtrum",
+    title: "Techtrum – Scale Your Business Growth",
     description:
-      "Saudi leader in facility management, soft & hard services, landscaping.",
-    images: ["https://www.fixerfm.com/twitter-image.jpg"], // 1200×600
+      "Specialized consulting firm offering advisory services in modern technologies and telecommunications within the business sector.",
+    images: ["https://www.techrium.com/twitter-image.jpg"], // 1200×600
   },
 
   // ---- Language alternates (i18n) ----
   alternates: {
-    canonical: "https://www.fixerfm.com",
+    canonical: "https://www.techrium.com",
     languages: {
-      "en-US": "https://www.fixerfm.com/en",
-      "ar-SA": "https://www.fixerfm.com/ar",
+      "en-US": "https://www.techrium.com/en",
+      "ar-SA": "https://www.techrium.com/ar",
     },
   },
 
@@ -104,7 +105,7 @@ export const viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#0b5ed7",
+  themeColor: "#246BFD",
 };
 
 // ---------------------------------------------------------------------
@@ -113,22 +114,28 @@ export const viewport = {
 const companySchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Fixer Facility Management",
-  url: "https://www.fixerfm.com",
-  logo: "https://www.fixerfm.com/logo.svg",
+  name: "Techtrum",
+  url: "https://www.techrium.com",
+  logo: "https://www.techrium.com/logo.svg",
   description:
-    "Saudi-based leader in facility management, soft & hard services, landscaping and civil maintenance.",
+    "Techtrum is a specialized consulting firm offering advisory services in modern technologies and telecommunications within the business sector.",
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+966-53-966-9980",
+    telephone: "+966 55 444 2151",
     contactType: "Customer Service",
-    email: "info@fixerfm.com",
+    email: "info@techrium.com",
     areaServed: "SA",
     availableLanguage: ["English", "Arabic"],
   },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Prince Khalid Bin Bander Street, AlArid Dist.",
+    addressLocality: "Riyadh",
+    addressCountry: "SA",
+  },
   sameAs: [
-    "https://twitter.com/fixerfm",
-    "https://www.linkedin.com/company/fixerfm",
+    "https://twitter.com/techtrum",
+    "https://www.linkedin.com/company/techtrum",
   ],
 };
 
@@ -140,8 +147,32 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.fixerfm.com/",
+      item: "https://www.techrium.com/",
     },
+  ],
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Techtrum",
+  image: "https://www.techrium.com/logo.svg",
+  description:
+    "Scale your business growth & revenue to the next level. Specialized consulting firm offering advisory services in modern technologies and telecommunications within the business sector.",
+  url: "https://www.techrium.com",
+  telephone: "+966 55 444 2151",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Prince Khalid Bin Bander Street, AlArid Dist.",
+    addressLocality: "Riyadh",
+    addressCountry: "SA",
+  },
+  priceRange: "$$",
+  serviceType: [
+    "Technology Consulting",
+    "Telecommunications Advisory",
+    "Business Strategy",
+    "Digital Transformation",
   ],
 };
 
@@ -163,6 +194,11 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
+        <Script
+          id="schema-service"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
 
         {/* ---- Favicon & Apple Touch Icon ---- */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -181,11 +217,11 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} ${cairo.variable} antialiased bg-white`}
         suppressHydrationWarning
       >
-       <ClientProviders>
-    <TopBar />
-    <Navbar />
-    {children}
-  </ClientProviders>
+        <ClientProviders>
+          <TopBar />
+          <Navbar />
+          {children}
+        </ClientProviders>
       </body>
     </html>
   );

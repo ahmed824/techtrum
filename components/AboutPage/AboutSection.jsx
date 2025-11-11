@@ -32,9 +32,9 @@ export function AboutSection({ t }) {
           {t("whoWeAre.title")}
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image - Left */}
-          <div className="flex justify-center lg:justify-end">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center" dir={currentLang === "ar" ? "rtl" : "ltr"}>
+          {/* Image - Left in LTR, Right in RTL */}
+          <div className={`flex justify-center ${currentLang === "ar" ? "lg:justify-start order-2" : "lg:justify-end order-1"}`}>
             <div className="relative">
               {/* Main Image */}
               <Image
@@ -48,8 +48,8 @@ export function AboutSection({ t }) {
             </div>
           </div>
 
-          {/* Text Content - Right */}
-          <div className="lg:text-left space-y-6">
+          {/* Text Content - Right in LTR, Left in RTL */}
+          <div className={`${currentLang === "ar" ? "lg:text-right order-1" : "lg:text-left order-2"} space-y-6`}>
             <h3 className="text-xl sm:text-2xl font-bold text-[#12283F]">
               {t("whoWeAre.company")}
             </h3>
@@ -57,14 +57,6 @@ export function AboutSection({ t }) {
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
               {t("whoWeAre.description")}
             </p>
-
-            <Link
-              href={`/${currentLang}/about`}
-              className="inline-flex items-center gap-2 text-[#236BFD] font-bold hover:gap-3 transition-all duration-300"
-              aria-label={t("whoWeAre.readMore")}
-            >
-              {t("whoWeAre.readMore")} ...
-            </Link>
           </div>
         </div>
       </div>

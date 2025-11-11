@@ -55,13 +55,6 @@ export function WhoWeAreSection({ t }) {
               {t("whoWeAre.description")}
             </p>
 
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 text-[#236BFD] font-bold hover:gap-3 transition-all duration-300"
-              aria-label={t("whoWeAre.readMore")}
-            >
-              {t("whoWeAre.readMore")} ...
-            </Link>
           </div>
         </div>
       </div>

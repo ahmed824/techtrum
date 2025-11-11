@@ -6,32 +6,7 @@ import { useIsRTL } from "@/utils/useIsRTL";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const servicesData = [
-  {
-    id: 1,
-    previewImage:
-      "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=600&fit=crop",
-    title: "Wireless and Fiber Connectivity Advisory",
-    description:
-      "we are specialized in consultancy of wide range of spectrum analysis, coverage mapping, optimal antenna placement, Network CAPEX/OPEX for wireless deployments, IBS Design, Radio Frequency design and Optimization, critical mission, feasibility Studies & Route Planning, OSP Engineering, 5G Backhaul Solutions, SON-Controlled Fiber Networks, Quantum Key Distribution (QKD), all of these services and consultancy within ensuring adherence to ITU, MCIT and CST regulations",
-  },
-  {
-    id: 2,
-    previewImage:
-      "https://images.unsplash.com/photo-1573167243872-43c6433b9d40?w=800&h=600&fit=crop",
-    title: "Smart City Strategies & Planning",
-    description:
-      "with Techrium Consult you can Define long-term smart city goals aligned with sustainability, efficiency, and citizen well-being. Assess current infrastructure and identify areas for smart transformation, Digital Twins, Satellite, IoT and best practice",
-  },
-  {
-    id: 3,
-    previewImage:
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop",
-    title: "Network Performance",
-    description:
-      "capabilities in Benchmarking and Performance Optimization Strategies for Network Capacity Planning, Scalability, RF Interference Mitigation, Band Steering, Load 5G Network Slicing Optimization can scale up your growth on very Balancing",
-  },
-];
+// servicesData will be generated dynamically using translation keys
 
 export default function ServicesScroll({ t }) {
   const isRTL = useIsRTL();
@@ -41,6 +16,28 @@ export default function ServicesScroll({ t }) {
   const imageRef = useRef(null);
   const blueLayerRef = useRef(null);
   const itemsRef = useRef([]);
+
+  // Generate servicesData from translation keys
+  const servicesData = [
+    {
+      id: 1,
+      previewImage: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=600&fit=crop",
+      title: t("services.scroll.items.1.title"),
+      description: t("services.scroll.items.1.description"),
+    },
+    {
+      id: 2,
+      previewImage: "https://images.unsplash.com/photo-1573167243872-43c6433b9d40?w=800&h=600&fit=crop",
+      title: t("services.scroll.items.2.title"),
+      description: t("services.scroll.items.2.description"),
+    },
+    {
+      id: 3,
+      previewImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop",
+      title: t("services.scroll.items.3.title"),
+      description: t("services.scroll.items.3.description"),
+    },
+  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {

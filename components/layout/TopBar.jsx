@@ -100,7 +100,7 @@ export function TopBar() {
 
 
           {/* Language switcher — always visible */}
-          <div className="flex gap-2 md:ml-6 text-center md:text-left" role="group" aria-label="Language switcher">
+          <div className="flex gap-2 md:ml-6 text-center md:text-start" role="group" aria-label="Language switcher">
             <button
               type="button"
               onClick={() => switchLang("ar")}

@@ -27,7 +27,7 @@ export function Footer() {
             <div className="bg-[#246BFD] rounded-[10px] p-6 sm:p-8 lg:px-12 lg:py-16 shadow-2xl transform translate-y-[-50%]">
               <div className="flex flex-col sm:flex-row items-center  gap-4">
                 {/* Title */}
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white text-center sm:text-left whitespace-nowrap">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white text-center sm:text-start whitespace-nowrap">
                   {t("footer.newsletterTitle") || "Subscribe To Our Newsletter"}
                 </h3>
 
@@ -58,7 +58,7 @@ export function Footer() {
       <div className="container mx-auto px-4 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
           {/* Company Info */}
-          <div className="space-y-3 text-center md:text-left">
+          <div className="space-y-3 text-center md:text-start ">
             {/* Company Logo */}
             <div className="relative w-[214px] h-16 flex justify-center md:justify-start items-center gap-3">
               <Image
@@ -109,7 +109,7 @@ export function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-start">
             <h5 className="text-[#236BFD] font-semibold mb-4">Quick Links</h5>
             <ul className="space-y-2 text-white">
               <li>
@@ -136,7 +136,7 @@ export function Footer() {
           </div>
 
           {/* Contact Info with Icons */}
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-start">
             <h5 className="text-[#236BFD] font-semibold mb-4">Contact</h5>
             <ul className="space-y-4 text-white">
               <li className="flex items-center justify-center md:justify-start gap-3">

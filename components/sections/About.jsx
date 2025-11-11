@@ -46,7 +46,7 @@ export function WhoWeAreSection({ t }) {
           </div>
 
           {/* Text Content - Right */}
-          <div className="lg:text-left space-y-2">
+          <div className="lg:text-start space-y-2">
             <h3 className="text-xl sm:text-2xl font-bold text-[#12283F]">
               {t("whoWeAre.company")}
             </h3>

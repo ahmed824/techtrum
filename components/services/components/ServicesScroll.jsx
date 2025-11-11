@@ -170,7 +170,7 @@ export default function ServicesScroll({ t: tProp }) {
               />
             </svg>
           </div>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 text-center sm:text-left">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 text-center sm:text-start">
             {t ? t("capabilities.telecom") : "Telecommunications & Smart Cities"}
           </h2>
         </div>

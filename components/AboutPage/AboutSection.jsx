@@ -1,10 +1,12 @@
 import Image from "next/image";
-import { FaArrowRight } from "react-icons/fa";
-import Link from "next/link";
+ import Link from "next/link";
 import { VisionMisionSection } from "./VisionMision";
+import { useTranslation } from "react-i18next";
 
 export function AboutSection({ t }) {
-  return (
+  const {i18n} = useTranslation();
+  const currentLang = i18n.language;
+    return (
     <section className="py-20 md:py-24  bg-white relative overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute top-0 left-0 w-[800px] h-[552px] pointer-events-none">
@@ -57,7 +59,7 @@ export function AboutSection({ t }) {
             </p>
 
             <Link
-              href="/about"
+              href={`/${currentLang}/about`}
               className="inline-flex items-center gap-2 text-[#236BFD] font-bold hover:gap-3 transition-all duration-300"
               aria-label={t("whoWeAre.readMore")}
             >

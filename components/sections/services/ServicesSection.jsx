@@ -42,7 +42,6 @@ export function ServicesSection({ t }) {
               <div key={service.id} className="relative">
                 <ServiceCard
                   service={service}
-                  href={service.id <= 3 ? `/${currentLang}/service-${service.id}` : undefined}
                   ariaLabel={service.title}
                 />
 

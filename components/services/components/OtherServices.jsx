@@ -12,6 +12,7 @@ export function OtherServices({ t, excludeKeys = [] }) {
     return seg === "ar" ? "ar" : "en";
   })();
   const all = [
+    { key: "telecom", icon: "/icons/telecommunications.svg", title: t("capabilities.telecom") },
     { key: "digital", icon: "/icons/digital-transformation.svg", title: t("capabilities.digital") },
     { key: "emerging", icon: "/icons/emerging-tech.svg", title: t("capabilities.emerging") },
   ];
@@ -62,7 +63,15 @@ export function OtherServices({ t, excludeKeys = [] }) {
 
               {/* Details Link */}
               <Link
-                href={cap.hrefKey === "digital" ? `/${currentLang}/service-2` : cap.hrefKey === "emerging" ? `/${currentLang}/service-3` : "#"}
+                href={
+                  cap.hrefKey === "telecom" 
+                    ? `/${currentLang}/service-1` 
+                    : cap.hrefKey === "digital" 
+                    ? `/${currentLang}/service-2` 
+                    : cap.hrefKey === "emerging" 
+                    ? `/${currentLang}/service-3` 
+                    : "#"
+                }
                 className={`text-[#236BFD] text-2xl font-light flex items-center gap-2 hover:gap-3 transition-all mt-auto ${isRTL ? "flex-row-reverse" : ""}`}
               >
                 {cap.details}

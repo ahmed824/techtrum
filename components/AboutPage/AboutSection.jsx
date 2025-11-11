@@ -49,7 +49,7 @@ export function AboutSection({ t }) {
           {/* Text Content - Right */}
           <div className="lg:text-left space-y-6">
             <h3 className="text-xl sm:text-2xl font-bold text-[#12283F]">
-              Techtrum Consult
+              {t("whoWeAre.company")}
             </h3>
 
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">

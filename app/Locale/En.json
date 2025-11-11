@@ -3,7 +3,8 @@
         "phone": "+966 55 444 2151",
         "email": "info@techtrum.com",
         "arabic": "العربية",
-        "english": "English"
+        "english": "English",
+        "socialAria": "Social media links"
     },
     "navbar": {
         "home": "Home",
@@ -11,7 +12,12 @@
         "services": "Services",
         "business": "Business",
         "contact": "Contact",
-        "bookVisit": "Get in Touch"
+        "bookVisit": "Get in Touch",
+        "mainNavAria": "Main navigation links",
+        "mobileNavAria": "Mobile navigation links",
+        "userActionsAria": "User actions",
+        "menu": "Navigation menu",
+        "closeMenu": "Close menu"
     },
     "hero": {
         "title1": "Scale your",
@@ -28,16 +34,17 @@
         "badge": "About Us",
         "title": "WHO WE ARE",
         "subtitle": "WHO WE ARE",
-        "description": "Fixer is a Saudi-based company leading the transformation of operations and facility management through cutting-edge technology, deep industry expertise, and sustainable solutions. With decades of combined experience",
+        "company": "Technaz Consult",
+        "description": "Technaz Consult is an engineering consulting firm specialized in providing advisory services to manage, operate, and maintain technologies in the business field to serve enterprises and organizations. We help our partners achieve more sustainability through supportive applications and technical expertise.",
         "readMore": "Read more"
     },
     "services": {
         "badge": "Values",
         "title": "Value Chains",
-        "subtitle": "We carries lots of expertise and accumulative experience in different sectors that become as value chain",
+        "subtitle": "We carry deep expertise and accumulative experience across sectors that form our value chain",
         "service1": "Soft Facility Management",
-        "service2": "Hard Facility Management",
-        "service3": "Landscaping",
+        "service2": "Digital Transformation",
+        "service3": "Emerging Technologies & Innovation",
         "service4": "Civil Maintenance & Repairs",
         "service5": "Fixer Platform",
         "soft": {
@@ -210,6 +217,52 @@
             "details": "Details"
         }
     },
+    "valueChains": {
+        "partnership": {
+            "title": "PARTNERSHIP",
+            "description": "We built bridges with many local and international firms to bring the latest and diverse smart solutions to the market at a professional level."
+        },
+        "design": {
+            "title": "DESIGN & STUDY",
+            "description": "Professional designs and studies in addition to supervision of implementation."
+        },
+        "simulation": {
+            "title": "SIMULATION",
+            "description": "We use the latest technologies following best practices to prove the efficiency of proposed technologies."
+        },
+        "innovation": {
+            "title": "INNOVATION",
+            "description": "Merging and integrating smart technologies across sectors to serve sustainability goals."
+        },
+        "sustainability": {
+            "title": "SUSTAINABILITY",
+            "description": "By guaranteeing delivered services and products, Techtrum ensures long system life and sustainability."
+        }
+    },
+    "services.scroll": {
+        "items": {
+            "1": {
+                "title": "Wireless and Fiber Connectivity Advisory",
+                "description": "We specialize in spectrum analysis, coverage mapping, optimal antenna placement, network CAPEX/OPEX, IBS design, RF design and optimization, mission-critical networks, feasibility studies and route planning, OSP engineering, 5G backhaul, SON-controlled fiber networks, and Quantum Key Distribution (QKD), ensuring compliance with ITU, MCIT, and CST regulations."
+            },
+            "2": {
+                "title": "Smart City Strategies & Planning",
+                "description": "Define long-term smart city goals aligned with sustainability, efficiency, and citizen well-being. Assess infrastructure and identify transformation areas using Digital Twins, Satellite, IoT, and best practices."
+            },
+            "3": {
+                "title": "Network Performance",
+                "description": "Benchmarking and performance optimization strategies for capacity planning, scalability, RF interference mitigation, band steering, and 5G network slicing optimization."
+            },
+            "4": {
+                "title": "Project Management",
+                "description": "Professional project management ensuring timely delivery and quality across telecom and smart city initiatives with expert oversight and coordination."
+            },
+            "5": {
+                "title": "MEP Engineering",
+                "description": "Comprehensive mechanical, electrical, and plumbing engineering solutions for modern infrastructure and smart city developments using cutting-edge technology."
+            }
+        }
+    },
     "stats": {
         "title": "We are The Best in Industry",
         "description": "Top companies trust Digit to expertly match them with high-quality, vetted talent for their most critical projects.",
@@ -245,7 +298,32 @@
     },
     "partners": {
         "title": "Our partner",
-        "subtitle": "Our partner"
+        "subtitle": "Our partner",
+        "badge": "Our Partner"
+    },
+    "capabilities": {
+        "badge": "Design For The Future",
+        "title": "Techtrum Capabilities",
+        "details": "Details",
+        "telecom": "Telecommunications & Smart Cities",
+        "digital": "Digital Transformation",
+        "emerging": "Emerging Technologies"
+    },
+    "services.first": {
+        "items": {
+            "1": {
+                "title": "01 - Wireless and Fiber Connectivity Advisory",
+                "description": "We specialize in spectrum analysis, coverage mapping, optimal antenna placement, network CAPEX/OPEX for wireless deployments, IBS design, RF design and optimization, mission‑critical networks, feasibility studies and route planning, OSP engineering, 5G backhaul solutions, SDN‑controlled fiber networks, and Quantum Key Distribution (QKD), ensuring adherence to ITU, MCIT, and CST regulations."
+            },
+            "2": {
+                "title": "02 - Smart City Strategies & Planning",
+                "description": "With Technaz Consult, define long‑term smart city goals aligned with sustainability, efficiency, and citizen well‑being. Assess current infrastructure and identify areas for smart transformation using Digital Twins, Satellite, IoT, and best practices."
+            },
+            "3": {
+                "title": "03 - Network Performance",
+                "description": "Capabilities in benchmarking and performance optimization strategies for network capacity planning, RF‑interference analysis, and 5G network slicing optimization for balanced scalability."
+            }
+        }
     },
     "testimonials": {
         "title": "Hear about us from our Client",
@@ -276,14 +354,31 @@
         "send": "Send",
         "copyright": "all copy right by techtrum 2025",
         "newsletterTitle": "Subscribe To Our Newsletter",
-        "emailPlaceholder": "Enter your email"
+        "emailPlaceholder": "Enter your email",
+        "aria": {
+            "facebook": "Facebook",
+            "instagram": "Instagram",
+            "twitter": "X (Twitter)",
+            "linkedin": "LinkedIn",
+            "scrollTop": "Scroll to top"
+        }
     },
     "mostServices": {
         "title": "Most Requested Services",
         "subtitle": "Most Requested Services"
     },
     "clients": {
-        "title": "Our Clients"
+        "title": "Our Clients",
+        "badge": "Our Clients",
+        "list": [
+            "Ministry of Social Affairs",
+            "General Authority for Food Security",
+            "Ministry of Communications",
+            "Saudi Railways",
+            "Saudi Aramco",
+            "Saudi Aramco",
+            "Ministry of Communications"
+        ]
     },
     "buttons": {
         "getNow": "Get now",
@@ -291,16 +386,24 @@
         "send": "Send"
     },
     "vision": {
-        "title": "Our Vision",
-        "text": "To be a leading provider of outstanding services in our field through continuous innovation and high quality."
+        "title": "Vision",
+        "text": "Being the best option for enterprises in maximizing the benefit of technology solutions by employing capabilities in emerging technologies to achieve their goals."
     },
     "mission": {
-        "title": "Our Mission",
-        "text": "Deliver innovative solutions that delight our clients and contribute to sustainable development."
+        "title": "Mission",
+        "text": "To innovate ideas and solutions to help businesses and companies increase productivity to achieve environmental, social, and governance (ESG) sustainability."
     },
     "message": {
-        "title": "Our Values",
-        "text": "Integrity, collaboration, excellence, and teamwork to achieve our shared goals."
+        "title": "Values",
+        "text": "Our technology consulting services are aiming to guide businesses in a professional manner."
+    },
+    "values": {
+        "title": "Values",
+        "text": "Our technology consulting services are diverse to guide businesses in a professional manner",
+        "integrity": "Integrity",
+        "diversity": "Diversity",
+        "transparency": "Transparency",
+        "professionalism": "Professionalism"
     },
     "pages": {
         "about": {
@@ -326,6 +429,9 @@
         "title": "Get In Touch",
         "header": "Contact Us",
         "subtitle": "In today's competitive business, the demand for efficient and cost-effective IT solutions has never been more critical.",
+        "formAria": "Contact form",
+        "sendAria": "Send message",
+        "mapAria": "Contact Information Map",
         "getInTouch": "Get in Touch",
         "placeholders": {
             "fullName": "Full name",
@@ -337,14 +443,15 @@
         "contactInfo": {
             "phone": "Phone",
             "email": "Email",
-            "address": "Address"
+            "address": "Address",
+            "addressValue": "Prince Khalid Bin Bander Street, AlArid Dist."
         },
         "serviceOptions": {
             "lighting": "Lighting Design",
             "consultation": "Consultation",
             "installation": "Installation"
         },
-         "formTitle": "Get In Touch",
+        "formTitle": "Get In Touch",
         "formSubtitle": "We will provide all the necessary advice, designs, and additions. We are the best.",
         "fullName": "Full name",
         "phone": "Phone number",

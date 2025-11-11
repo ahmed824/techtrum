@@ -16,7 +16,7 @@ export function DesktopNav({ navLinks, activeSection, t }) {
       {/* Desktop Links - Logical order in navigation */}
       <nav
         className="hidden lg:flex items-center gap-24"
-        aria-label="Main navigation links"
+        aria-label={t("navbar.mainNavAria", { defaultValue: "Main navigation links" })}
       >
         {navLinks.map(({ id, label, href }) => (
           <NavLink
@@ -32,7 +32,7 @@ export function DesktopNav({ navLinks, activeSection, t }) {
       <div
         className="hidden lg:flex items-center gap-3"
         role="group"
-        aria-label="User actions"
+        aria-label={t("navbar.userActionsAria", { defaultValue: "User actions" })}
       >
         <Link
           href={`/${currentLang}/contact`}

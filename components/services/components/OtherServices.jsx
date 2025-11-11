@@ -1,20 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FaArrowRightLong } from "react-icons/fa6";
 
-export function OtherServices({ t }) {
-  const capabilities = [
-    {
-      icon: "/icons/digital-transformation.svg",
-      title: t("capabilities.digital"),
-      details: t("capabilities.details"),
-    },
-    {
-      icon: "/icons/emerging-tech.svg",
-      title: t("capabilities.emerging"),
-      details: t("capabilities.details"),
-    },
+export function OtherServices({ t, excludeKeys = [] }) {
+  const pathname = usePathname();
+  const currentLang = (() => {
+    const seg = pathname?.split("/").filter(Boolean)[0];
+    return seg === "ar" ? "ar" : "en";
+  })();
+  const all = [
+    { key: "digital", icon: "/icons/digital-transformation.svg", title: t("capabilities.digital") },
+    { key: "emerging", icon: "/icons/emerging-tech.svg", title: t("capabilities.emerging") },
   ];
+
+  const capabilities = all.filter((c) => !excludeKeys.includes(c.key)).map((c) => ({
+    icon: c.icon,
+    title: c.title,
+    details: t("capabilities.details"),
+    hrefKey: c.key,
+  }));
 
   return (
     <section className="py-20 md:py-36 relative overflow-hidden">
@@ -50,15 +55,15 @@ export function OtherServices({ t }) {
 
               {/* Title */}
               <h3 className="text-black font-light text-lg sm:text-2xl mb-[84px]">
-                {"Telecommunications & Smart Cities"}
+                {cap.title}
               </h3>
 
               {/* Details Link */}
               <Link
-                href="#"
+                href={cap.hrefKey === "digital" ? `/${currentLang}/service-2` : cap.hrefKey === "emerging" ? `/${currentLang}/service-3` : "#"}
                 className="text-[#236BFD] text-2xl font-light flex items-center gap-2 hover:gap-3 transition-all mt-auto"
               >
-                Details
+                {cap.details}
                 <FaArrowRightLong className="text-lg font-light" />
               </Link>
             </div>

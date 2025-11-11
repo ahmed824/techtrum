@@ -2,9 +2,15 @@
 import Image from "next/image";
 import { Services } from "./services";
 import ServiceCard from "./ServiceCard";
+import { usePathname } from "next/navigation";
 
 export function ServicesSection({ t }) {
   const services = Services({ t });
+  const pathname = usePathname();
+  const currentLang = (() => {
+    const seg = pathname?.split("/").filter(Boolean)[0];
+    return seg === "ar" ? "ar" : "en";
+  })();
 
   return (
     <section
@@ -34,7 +40,11 @@ export function ServicesSection({ t }) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-7 ">
             {services?.map((service, index) => (
               <div key={service.id} className="relative">
-                <ServiceCard service={service} />
+                <ServiceCard
+                  service={service}
+                  href={service.id <= 3 ? `/${currentLang}/service-${service.id}` : undefined}
+                  ariaLabel={service.title}
+                />
 
                 {/* path.png - Only 3 times: Top, Bottom, Top */}
                 {index < 4 && (

@@ -1,10 +1,34 @@
 "use client";
 import Image from "next/image";
-import { Services } from "../sections/services/services"; 
-import ServiceCard from "../sections/services/ServiceCard";
 
 export function ValueChainSection({ t }) {
-  const services = Services({ t });
+  const items = [
+    {
+      id: 1,
+      title: t("valueChains.partnership.title"),
+      description: t("valueChains.partnership.description"),
+    },
+    {
+      id: 2,
+      title: t("valueChains.design.title"),
+      description: t("valueChains.design.description"),
+    },
+    {
+      id: 3,
+      title: t("valueChains.simulation.title"),
+      description: t("valueChains.simulation.description"),
+    },
+    {
+      id: 4,
+      title: t("valueChains.innovation.title"),
+      description: t("valueChains.innovation.description"),
+    },
+    {
+      id: 5,
+      title: t("valueChains.sustainability.title"),
+      description: t("valueChains.sustainability.description"),
+    },
+  ];
 
   return (
     <section
@@ -29,62 +53,19 @@ export function ValueChainSection({ t }) {
           {t("services.subtitle")}
         </p>
 
-        {/* Cards with 3 path.png Images in Zigzag Pattern */}
-        <div className="relative">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-7 ">
-            {services?.map((service, index) => (
-              <div key={service.id} className="relative">
-                <ServiceCard service={service} />
-
-                {/* path.png - Only 3 times: Top, Bottom, Top */}
-                {index < 4 && (
-                  <div className="z-0">
-                    {/* 1st connector: Card 1 to Card 2 (TOP) */}
-                    {index === 0 && (
-                      <div className="hidden lg:block absolute -top-14 left-full transform -translate-x-1/2 w-32 h-20 pointer-events-none z-10">
-                        <Image
-                          src="/path.png"
-                          alt="Connector"
-                          width={128}
-                          height={80}
-                          className="w-full h-full object-contain"
-                          priority
-                        />
-                      </div>
-                    )}
-
-                    {/* 2nd connector: Card 2 to Card 3 (BOTTOM) */}
-                    {index === 1 && (
-                      <div className="hidden lg:block absolute -bottom-24 left-full transform -translate-x-1/2 -translate-y-1/2 w-32 h-20 pointer-events-none z-10">
-                        <Image
-                          src="/path.png"
-                          alt="Connector"
-                          width={128}
-                          height={80}
-                          className="w-full h-full object-contain scale-y-[-1]"
-                          priority
-                        />
-                      </div>
-                    )}
-
-                    {/* 3rd connector: Card 4 to Card 5 (TOP) */}
-                    {index === 3 && (
-                      <div className="hidden lg:block absolute -top-14 left-full transform -translate-x-1/2 w-32 h-20 pointer-events-none z-10">
-                        <Image
-                          src="/path.png"
-                          alt="Connector"
-                          width={128}
-                          height={80}
-                          className="w-full h-full object-contain"
-                          priority
-                        />
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+        {/* Value Chains Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-7">
+          {items.map((item, idx) => (
+            <div
+              key={item.id}
+              className="bg-white rounded-[10px] p-6 border border-[#CACACA] shadow-sm hover:shadow-md transition-shadow"
+              data-aos="fade-up"
+              data-aos-delay={idx * 80}
+            >
+              <h3 className="text-[#12283F] font-bold text-lg sm:text-xl mb-3">{item.title}</h3>
+              <p className="text-gray-700 text-sm sm:text-base leading-relaxed">{item.description}</p>
+            </div>
+          ))}
         </div>
       </div>
 

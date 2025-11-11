@@ -23,18 +23,15 @@ export function ClientsSection({ t }) {
     } catch {}
   }, [isRTL, swiperRef]);
 
+  const clientNames = t("clients.list", { returnObjects: true }) || [];
   const clients = [
-    { id: 1, logo: "/clients/client6.png", name: "وزارة الشؤون الاجتماعية" },
-    {
-      id: 2,
-      logo: "/clients/client1.png",
-      name: "الهيئة العامة للأمن الغذائي",
-    },
-    { id: 3, logo: "/clients/client2.png", name: "وزارة الاتصالات" },
-    { id: 4, logo: "/clients/client3.png", name: "الخطوط الحديدية" },
-    { id: 5, logo: "/clients/client4.png", name: "أرامكو السعودية" },
-    { id: 6, logo: "/clients/client5.png", name: "أرامكو السعودية" },
-    { id: 7, logo: "/clients/client2.png", name: "وزارة الاتصالات" },
+    { id: 1, logo: "/clients/client6.png", name: clientNames[0] },
+    { id: 2, logo: "/clients/client1.png", name: clientNames[1] },
+    { id: 3, logo: "/clients/client2.png", name: clientNames[2] },
+    { id: 4, logo: "/clients/client3.png", name: clientNames[3] },
+    { id: 5, logo: "/clients/client4.png", name: clientNames[4] },
+    { id: 6, logo: "/clients/client5.png", name: clientNames[5] },
+    { id: 7, logo: "/clients/client2.png", name: clientNames[6] },
   ];
 
   return (

@@ -32,7 +32,7 @@ const servicesData = [
   },
 ];
 
-export default function ServicesScroll() {
+export default function ServicesScroll({ t }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef(null);
   const imageContainerRef = useRef(null);
@@ -115,7 +115,7 @@ export default function ServicesScroll() {
             </svg>
           </div>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 text-center sm:text-left">
-            Telecommunications & Smart Cities
+            {t ? t("capabilities.telecom") : "Telecommunications & Smart Cities"}
           </h2>
         </div>
       </div>

@@ -1,11 +1,14 @@
+"use client"
 import Image from "next/image"
 import { CiUser, CiWarning } from "react-icons/ci"
 import { FiPhone } from "react-icons/fi"
 import { GiAutoRepair } from "react-icons/gi"
 import { HiOutlineMail } from "react-icons/hi"
+import { useTranslation } from "react-i18next"
 
 
 const Form = () => {
+    const { t } = useTranslation()
     return (
         <div
             className="w-full relative z-[2] pb-[100px] pt-[200px] bg-cover bg-center   bg-no-repeat"
@@ -48,57 +51,57 @@ const Form = () => {
                                 WebkitTextStroke: "2px #101828",
                             }}
                         >
-                            Get in Touch
+                            {t("contact.getInTouch")}
                         </h2>
 
                     </div>
                     <p className="text-white text-[18px]">
-                        Reach out for inquiries, partnerships, or support. Our team will respond within 24 hours.
+                        {t("contact.subtitle")}
                     </p>
 
                     {/* Form */}
-                    <form className="grid grid-cols-1 md:grid-cols-2 gap-[11px] mt-10" aria-label="Contact form">
+                    <form className="grid grid-cols-1 md:grid-cols-2 gap-[11px] mt-10" aria-label={t("contact.formAria", { defaultValue: "Contact form" })}>
                         <div className="relative">
-                            <label htmlFor="form-fullName" className="sr-only">Full name</label>
+                            <label htmlFor="form-fullName" className="sr-only">{t("contact.placeholders.fullName")}</label>
                             <CiUser className="absolute text-lg start-6 top-5 text-[#FC942A]" aria-hidden="true" />
                             <input
                                 id="form-fullName"
                                 name="fullName"
                                 type="text"
-                                placeholder="Full name"
+                                placeholder={t("contact.placeholders.fullName")}
                                 className="placeholder:text-[#9394AA] text-white outline-none ps-14 pe-6 py-2 min-h-[60px] border border-[#0c0f40] bg-[#ffffff31] rounded-full w-full"
                                 aria-required="true"
                             />
                         </div>
 
                         <div className="relative">
-                            <label htmlFor="form-phone" className="sr-only">Phone number</label>
+                            <label htmlFor="form-phone" className="sr-only">{t("contact.placeholders.phone")}</label>
                             <FiPhone className="absolute text-lg start-6 top-5 text-[#FC942A]" aria-hidden="true" />
                             <input
                                 id="form-phone"
                                 name="phone"
                                 type="tel"
-                                placeholder="Phone number"
+                                placeholder={t("contact.placeholders.phone")}
                                 className="placeholder:text-[#9394AA] text-white outline-none ps-14 pe-6 py-2 min-h-[60px] border border-[#0c0f40] bg-[#ffffff31] rounded-full w-full"
                                 aria-required="true"
                             />
                         </div>
 
                         <div className="relative">
-                            <label htmlFor="form-email" className="sr-only">Email address</label>
+                            <label htmlFor="form-email" className="sr-only">{t("contact.placeholders.email")}</label>
                             <HiOutlineMail className="absolute text-lg start-6 top-5 text-[#FC942A]" aria-hidden="true" />
                             <input
                                 id="form-email"
                                 name="email"
                                 type="email"
-                                placeholder="Email address"
+                                placeholder={t("contact.placeholders.email")}
                                 className="placeholder:text-[#9394AA] text-white outline-none ps-14 pe-6 py-2 min-h-[60px] border border-[#0c0f40] bg-[#ffffff31] rounded-full w-full"
                                 aria-required="true"
                             />
                         </div>
 
                         <div className="relative">
-                            <label htmlFor="form-service" className="sr-only">Select Service</label>
+                            <label htmlFor="form-service" className="sr-only">{t("contact.placeholders.service")}</label>
                             <GiAutoRepair className="absolute text-lg start-6 top-5 text-[#FC942A]" aria-hidden="true" />
                             <select 
                                 id="form-service"
@@ -107,16 +110,16 @@ const Form = () => {
                                 aria-required="true"
                             >
                                 <option className="text-black" value="">
-                                    Select Service
+                                    {t("contact.placeholders.service")}
                                 </option>
                                 <option className="text-black" value="lighting">
-                                    Lighting Design
+                                    {t("contact.serviceOptions.lighting")}
                                 </option>
                                 <option className="text-black" value="consultation">
-                                    Consultation
+                                    {t("contact.serviceOptions.consultation")}
                                 </option>
                                 <option className="text-black" value="installation">
-                                    Installation
+                                    {t("contact.serviceOptions.installation")}
                                 </option>
                             </select>
                             <svg
@@ -137,12 +140,12 @@ const Form = () => {
                         </div>
 
                         <div className="relative md:col-span-2">
-                            <label htmlFor="form-message" className="sr-only">Your message</label>
+                            <label htmlFor="form-message" className="sr-only">{t("contact.placeholders.message")}</label>
                             <CiWarning className="absolute text-lg start-6 top-5 text-[#FC942A]" aria-hidden="true" />
                             <textarea
                                 id="form-message"
                                 name="message"
-                                placeholder="Your message"
+                                placeholder={t("contact.placeholders.message")}
                                 className="placeholder:text-[#9394AA] text-white outline-none ps-14 pe-6 py-4 min-h-[173px] max-h-[200px] border border-[#0c0f40] bg-[#ffffff31] rounded-[40px] w-full h-40"
                                 aria-required="true"
                             />
@@ -152,9 +155,9 @@ const Form = () => {
                     <button 
                       type="submit"
                       className="bg-[#FC942A] ms-auto block w-fit text-white py-[12px] px-[60px] rounded-full mt-[20px]"
-                      aria-label="Send message"
+                      aria-label={t("contact.sendAria", { defaultValue: "Send message" })}
                     >
-                        Send
+                        {t("buttons.send")}
                     </button>
 
                 </div>

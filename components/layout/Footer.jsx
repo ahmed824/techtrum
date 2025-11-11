@@ -79,28 +79,28 @@ export function Footer() {
             <div className="flex gap-4 justify-center md:justify-start">
               <Link
                 href="#"
-                aria-label="Facebook"
+                aria-label={t("footer.aria.facebook", { defaultValue: "Facebook" })}
                 className="text-gray-300 hover:text-[#236BFD] transition-transform transform hover:scale-110"
               >
                 <FaFacebookF className="text-lg" />
               </Link>
               <Link
                 href="#"
-                aria-label="Instagram"
+                aria-label={t("footer.aria.instagram", { defaultValue: "Instagram" })}
                 className="text-gray-300 hover:text-[#236BFD] transition-transform transform hover:scale-110"
               >
                 <FaInstagram className="text-lg" />
               </Link>
               <Link
                 href="#"
-                aria-label="X (Twitter)"
+                aria-label={t("footer.aria.twitter", { defaultValue: "X (Twitter)" })}
                 className="text-gray-300 hover:text-[#236BFD] transition-transform transform hover:scale-110"
               >
                 <SiX className="text-lg" />
               </Link>
               <Link
                 href="#"
-                aria-label="LinkedIn"
+                aria-label={t("footer.aria.linkedin", { defaultValue: "LinkedIn" })}
                 className="text-gray-300 hover:text-[#236BFD] transition-transform transform hover:scale-110"
               >
                 <FaLinkedinIn className="text-lg" />
@@ -173,7 +173,7 @@ export function Footer() {
       <button
         onClick={scrollToTop}
         className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-[#236BFD] text-white flex items-center justify-center shadow-lg hover:bg-[#1a54c7] transition z-50"
-        aria-label="Scroll to top"
+        aria-label={t("footer.aria.scrollTop", { defaultValue: "Scroll to top" })}
       >
         <svg
           className="w-6 h-6"

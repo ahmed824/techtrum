@@ -11,7 +11,7 @@ import { ContactSection } from "@/components/sections/ContactSection";
 // Map with Info Cards (Top Position)
 function MapSection({ t, contactData }) {
   return (
-    <section className="relative" aria-label="Contact Information Map">
+    <section className="relative" aria-label={t("contact.mapAria", { defaultValue: "Contact Information Map" })}>
       {/* Info Cards - Positioned at Top */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 -mb-20 sm:-mb-32 lg:-mb-40 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
@@ -72,17 +72,17 @@ export default function ContactClient() {
     {
       icon: <FiPhone />,
       title: t("contact.contactInfo.phone"),
-      info: "+966 55 444 2151",
+      info: t("topBar.phone"),
     },
     {
       icon: <HiOutlineMail />,
       title: t("contact.contactInfo.email"),
-      info: "info@techrium.com",
+      info: t("topBar.email"),
     },
     {
       icon: <CiLocationOn />,
       title: t("contact.contactInfo.address"),
-      info: "Prince Khalid Bin Bander Street, AlArid Dist.",
+      info: t("contact.contactInfo.addressValue"),
     },
   ];
 

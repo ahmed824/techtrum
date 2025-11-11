@@ -55,7 +55,7 @@ export function TopBar() {
         {/* Right side — social icons + language */}
         <div className="flex items-center gap-4">
           {/* Social icons (hidden on small screens) */}
-          <div className="hidden md:flex gap-3" role="list" aria-label="روابط وسائل التواصل الاجتماعي">
+          <div className="hidden md:flex gap-3" role="list" aria-label={t("topBar.socialAria", { defaultValue: "Social media links" })}>
             <a
               role="listitem"
               href="#"

@@ -60,7 +60,7 @@ export function MobileSidebar({
       </div>
 
       {/* Mobile Links */}
-      <nav aria-label="Mobile navigation links">
+      <nav aria-label={t("navbar.mobileNavAria", { defaultValue: "Mobile navigation links" })}>
         <MobileNavLinks
           navLinks={navLinks}
           activeSection={activeSection}
@@ -70,7 +70,7 @@ export function MobileSidebar({
       </nav>
 
       {/* Mobile Buttons */}
-      <div role="group" aria-label="User actions">
+      <div role="group" aria-label={t("navbar.userActionsAria", { defaultValue: "User actions" })}>
         <MobileButtons t={t} />
       </div>
     </div>

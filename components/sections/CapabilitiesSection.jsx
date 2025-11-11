@@ -71,7 +71,7 @@ export function CapabilitiesSection({ t }) {
 
               {/* Title */}
               <h3 className="text-black font-light text-lg sm:text-2xl mb-[84px]">
-                {"Telecommunications & Smart Cities"}
+                {cap.title}
               </h3>
 
               {/* Details Link */}
@@ -79,7 +79,7 @@ export function CapabilitiesSection({ t }) {
                 href="#"
                 className="text-[#236BFD] text-2xl font-light flex items-center gap-2 hover:gap-3 transition-all mt-auto"
               >
-                Details
+                {cap.details}
                 <FaArrowRightLong className="text-lg font-light" />
               </Link>
             </div>

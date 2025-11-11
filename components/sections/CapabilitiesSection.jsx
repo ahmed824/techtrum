@@ -1,23 +1,36 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
+import { usePathname } from "next/navigation";
+import { useIsRTL } from "@/utils/useIsRTL";
   
 export function CapabilitiesSection({ t }) {
+  const pathname = usePathname();
+  const isRTL = useIsRTL();
+  const currentLang = (() => {
+    const seg = pathname?.split("/").filter(Boolean)[0];
+    return seg === "ar" ? "ar" : "en";
+  })();
+
   const capabilities = [
     {
       icon: "/icons/telecommunications.svg",
       title: t("capabilities.telecom"),
       details: t("capabilities.details"),
+      href: `/${currentLang}/service-1`,
     },
     {
       icon: "/icons/digital-transformation.svg",
       title: t("capabilities.digital"),
       details: t("capabilities.details"),
+      href: `/${currentLang}/service-2`,
     },
     {
       icon: "/icons/emerging-tech.svg",
       title: t("capabilities.emerging"),
       details: t("capabilities.details"),
+      href: `/${currentLang}/service-3`,
     },
   ];
 
@@ -76,11 +89,15 @@ export function CapabilitiesSection({ t }) {
 
               {/* Details Link */}
               <Link
-                href="#"
-                className="text-[#236BFD] text-2xl font-light flex items-center gap-2 hover:gap-3 transition-all mt-auto"
+                href={cap.href}
+                className={`text-[#236BFD] text-2xl font-light flex items-center gap-2 hover:gap-3 transition-all mt-auto ${isRTL ? "flex-row-reverse" : ""}`}
               >
                 {cap.details}
-                <FaArrowRightLong className="text-lg font-light" />
+                {isRTL ? (
+                  <FaArrowLeftLong className="text-lg font-light" />
+                ) : (
+                  <FaArrowRightLong className="text-lg font-light" />
+                )}
               </Link>
             </div>
           ))}

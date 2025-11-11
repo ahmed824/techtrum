@@ -12,7 +12,6 @@ export default function FirstService() {
     <div className="min-h-screen bg-white">
       <BreadcrumbHero
         titleKey="capabilities.telecom"
-        subtitle={t("capabilities.title")}
         subtitleImage="/icons/telecommunications.svg"
         t={t}
       />

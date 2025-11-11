@@ -12,12 +12,11 @@ export default function ThirdService() {
     <div className="min-h-screen bg-white">
       <BreadcrumbHero
         titleKey="capabilities.emerging"
-        subtitle={t("capabilities.title")}
         subtitleImage="/icons/emerging-tech.svg"
         t={t}
       />
       <ServicesScroll t={t} />
-      <OtherServices t={t} excludeKeys={["telecom", "digital"]} />
+      <OtherServices t={t} excludeKeys={["emerging"]} />
       <div className="mb-80">
         <ContactSection t={t} />
       </div>

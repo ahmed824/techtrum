@@ -12,12 +12,11 @@ export default function SecondService() {
     <div className="min-h-screen bg-white">
       <BreadcrumbHero
         titleKey="capabilities.digital"
-        subtitle={t("capabilities.title")}
         subtitleImage="/icons/digital-transformation.svg"
         t={t}
       />
       <ServicesScroll t={t} />
-      <OtherServices t={t} excludeKeys={["telecom", "emerging"]} />
+      <OtherServices t={t} excludeKeys={["digital"]} />
       <div className="mb-80">
         <ContactSection t={t} />
       </div>

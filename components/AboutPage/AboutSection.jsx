@@ -20,17 +20,15 @@ export function AboutSection({ t }) {
       </div>
 
       <div className="container mx-auto px-4 relative">
-        {/* Badge - About us */}
-        <div className="flex justify-center mb-6">
+        {/* <div className="flex justify-center mb-6">
           <span className="inline-block bg-[#236BFD] text-white text-xs sm:text-sm font-medium px-4 py-1.5 rounded-full">
             {t("whoWeAre.badge")}
           </span>
         </div>
 
-        {/* Section Title - Centered */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-black mb-14 max-w-3xl mx-auto">
           {t("whoWeAre.title")}
-        </h2>
+        </h2> */}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center" dir={currentLang === "ar" ? "rtl" : "ltr"}>
           {/* Image - Left in LTR, Right in RTL */}

@@ -110,7 +110,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="text-center md:text-start">
-            <h5 className="text-[#236BFD] font-semibold mb-4">Quick Links</h5>
+            <h5 className="text-[#236BFD] font-semibold mb-4">{t("footer.quickLinks") || "Quick Links"}</h5>
             <ul className="space-y-2 text-white">
               <li>
                 <Link href="#" className="hover:text-gray-300 transition">
@@ -137,7 +137,7 @@ export function Footer() {
 
           {/* Contact Info with Icons */}
           <div className="text-center md:text-start">
-            <h5 className="text-[#236BFD] font-semibold mb-4">Contact</h5>
+            <h5 className="text-[#236BFD] font-semibold mb-4">{t("footer.contact") || "Contact"}</h5>
             <ul className="space-y-4 text-white">
               <li className="flex items-center justify-center md:justify-start gap-3">
                 <FaPhone className="text-[#236BFD] text-sm" />

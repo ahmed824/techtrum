@@ -122,7 +122,7 @@ export function VisionMisionSection() {
                 <div className="w-[80px] h-[80px] rounded-full bg-[#ECEFFF] flex items-center justify-center shadow-sm">
                   <Image
                     src="/icons/values.svg"
-                    alt="Values"
+                    alt={t("values.title") || "Values"}
                     width={40}
                     height={40}
                     className="object-contain"

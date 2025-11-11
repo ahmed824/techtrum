@@ -12,10 +12,16 @@ import { useTranslation } from "react-i18next";
 import Link from "next/link";
 
 export function Footer() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language || "en";
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // Helper function to create language-aware links
+  const getLangLink = (path: string) => {
+    return `/${lang}${path}`;
   };
 
   return (
@@ -25,14 +31,14 @@ export function Footer() {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="bg-[#246BFD] rounded-[10px] p-6 sm:p-8 lg:px-12 lg:py-16 shadow-2xl transform translate-y-[-50%]">
-              <div className="flex flex-col sm:flex-row items-center  gap-4">
+              <div className="flex flex-col sm:flex-row items-center gap-4">
                 {/* Title */}
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white text-center sm:text-start whitespace-nowrap">
                   {t("footer.newsletterTitle") || "Subscribe To Our Newsletter"}
                 </h3>
 
                 {/* Form with Button Inside Input */}
-                <form className="relative w-full ">
+                <form className="relative w-full">
                   <input
                     type="email"
                     placeholder={
@@ -58,17 +64,19 @@ export function Footer() {
       <div className="container mx-auto px-4 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
           {/* Company Info */}
-          <div className="space-y-3 text-center md:text-start ">
+          <div className="space-y-3 text-center md:text-start">
             {/* Company Logo */}
-            <div className="relative w-[214px] h-16 flex justify-center md:justify-start items-center gap-3">
-              <Image
-                src="/light-logo.svg"
-                alt="Techtrum Logo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
+            <Link href={getLangLink("/")} className="inline-block">
+              <div className="relative w-[214px] h-16 flex justify-center md:justify-start items-center gap-3">
+                <Image
+                  src="/light-logo.svg"
+                  alt="Techtrum Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </Link>
 
             <p className="text-white text-sm sm:text-base max-w-xs mx-auto md:mx-0 mb-7 leading-relaxed">
               {t("footer.description") ||
@@ -78,28 +86,36 @@ export function Footer() {
             {/* Social Icons */}
             <div className="flex gap-4 justify-center md:justify-start">
               <Link
-                href="#"
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={t("footer.aria.facebook", { defaultValue: "Facebook" })}
                 className="text-gray-300 hover:text-[#236BFD] transition-transform transform hover:scale-110"
               >
                 <FaFacebookF className="text-lg" />
               </Link>
               <Link
-                href="#"
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={t("footer.aria.instagram", { defaultValue: "Instagram" })}
                 className="text-gray-300 hover:text-[#236BFD] transition-transform transform hover:scale-110"
               >
                 <FaInstagram className="text-lg" />
               </Link>
               <Link
-                href="#"
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={t("footer.aria.twitter", { defaultValue: "X (Twitter)" })}
                 className="text-gray-300 hover:text-[#236BFD] transition-transform transform hover:scale-110"
               >
                 <SiX className="text-lg" />
               </Link>
               <Link
-                href="#"
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={t("footer.aria.linkedin", { defaultValue: "LinkedIn" })}
                 className="text-gray-300 hover:text-[#236BFD] transition-transform transform hover:scale-110"
               >
@@ -110,25 +126,39 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="text-center md:text-start">
-            <h5 className="text-[#236BFD] font-semibold mb-4">{t("footer.quickLinks") || "Quick Links"}</h5>
+            <h5 className="text-[#236BFD] font-semibold mb-4">
+              {t("footer.quickLinks") || "Quick Links"}
+            </h5>
             <ul className="space-y-2 text-white">
               <li>
-                <Link href="#" className="hover:text-gray-300 transition">
+                <Link 
+                  href={getLangLink("/")} 
+                  className="hover:text-gray-300 transition"
+                >
                   {t("navbar.home") || "Home"}
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-gray-300 transition">
+                <Link 
+                  href={getLangLink("/about")} 
+                  className="hover:text-gray-300 transition"
+                >
                   {t("navbar.about") || "About"}
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-gray-300 transition">
-                  {t("navbar.services") || "Service"}
+                <Link 
+                  href={getLangLink("/service-1")} 
+                  className="hover:text-gray-300 transition"
+                >
+                  {t("navbar.services") || "Services"}
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-gray-300 transition">
+                <Link 
+                  href={getLangLink("/contact")} 
+                  className="hover:text-gray-300 transition"
+                >
                   {t("navbar.contact") || "Contact us"}
                 </Link>
               </li>
@@ -137,7 +167,9 @@ export function Footer() {
 
           {/* Contact Info with Icons */}
           <div className="text-center md:text-start">
-            <h5 className="text-[#236BFD] font-semibold mb-4">{t("footer.contact") || "Contact"}</h5>
+            <h5 className="text-[#236BFD] font-semibold mb-4">
+              {t("footer.contact") || "Contact"}
+            </h5>
             <ul className="space-y-4 text-white">
               <li className="flex items-center justify-center md:justify-start gap-3">
                 <FaPhone className="text-[#236BFD] text-sm" />
@@ -164,7 +196,7 @@ export function Footer() {
         {/* Bottom Line */}
         <div className="mt-12 pt-8 border-t border-gray-700 text-center">
           <p className="text-gray-500 text-sm">
-            {t("footer.copyright") || "all copy right ti techtrum 2025"}
+            {t("footer.copyright") || "© 2025 Techtrum. All rights reserved."}
           </p>
         </div>
       </div>

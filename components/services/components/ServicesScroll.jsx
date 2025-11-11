@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useIsRTL } from "@/utils/useIsRTL";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,6 +34,7 @@ const servicesData = [
 ];
 
 export default function ServicesScroll({ t }) {
+  const isRTL = useIsRTL();
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef(null);
   const imageContainerRef = useRef(null);
@@ -120,13 +122,13 @@ export default function ServicesScroll({ t }) {
         </div>
       </div>
 
-      <section className="relative mt-20 md:mt-32 lg:mt-0" ref={containerRef}>
+      <section className="relative mt-20 md:mt-32 lg:mt-0" ref={containerRef} dir={isRTL ? "rtl" : "ltr"}>
         {/* Decorative Pattern Image - Bottom Left, 500px */}
-        <div className="absolute z-0 top-20 -left-20 w-[500px] h-[500px] pointer-events-none opacity-85 hidden lg:block">
+        <div className={`absolute z-0 top-20 w-[500px] h-[500px] pointer-events-none opacity-85 hidden lg:block ${isRTL ? "-right-20" : "-left-20"}`}>
           <img
             src="/pattern.png"
             alt="Decorative pattern"
-            className="w-full h-full object-contain object-bottom object-left"
+            className={`w-full h-full object-contain object-bottom ${isRTL ? "object-right" : "object-left"}`}
           />
         </div>
         <div className="container mx-auto px-4 max-w-7xl pb-10 md:pb-20 relative">
@@ -164,13 +166,13 @@ export default function ServicesScroll({ t }) {
                 </div>
 
                 {/* Number badge */}
-                <div className="absolute text-4xl sm:text-5xl md:text-7xl font-bold bottom-1 md:bottom-2 -left-8 sm:-left-12 md:-left-20 text-black">
+                <div className={`absolute text-4xl sm:text-5xl md:text-7xl font-bold bottom-1 md:bottom-2 text-black ${isRTL ? "-right-8 sm:-right-12 md:-right-20" : "-left-8 sm:-left-12 md:-left-20"}`}>
                   {String(activeIndex + 1).padStart(2, "0")}
                 </div>
 
                 {/* Grid pattern */}
                 <svg
-                  className="absolute -bottom-12 md:-bottom-24 left-16 sm:left-20 md:left-28 w-40 sm:w-48 md:w-64 h-20 sm:h-24 md:h-32 opacity-10 z-20"
+                  className={`absolute -bottom-12 md:-bottom-24 w-40 sm:w-48 md:w-64 h-20 sm:h-24 md:h-32 opacity-10 z-20 ${isRTL ? "right-16 sm:right-20 md:right-28" : "left-16 sm:left-20 md:left-28"}`}
                   viewBox="0 0 256 128"
                   fill="none"
                 >
@@ -201,7 +203,7 @@ export default function ServicesScroll({ t }) {
             </div>
 
             <div className="relative space-y-20 md:space-y-32 lg:space-y-40 py-12 md:py-16 lg:py-24">
-              <div className="absolute left-[7px] top-14 md:top-20 lg:top-28 bottom-20 md:bottom-32 lg:bottom-40 w-[1px] bg-[#246BFD]" />
+              <div className={`absolute top-14 md:top-20 lg:top-28 bottom-20 md:bottom-32 lg:bottom-40 w-[1px] bg-[#246BFD] ${isRTL ? "right-[7px]" : "left-[7px]"}`} />
               {servicesData.map((service, i) => (
                 <div
                   key={service.id}
@@ -221,13 +223,13 @@ export default function ServicesScroll({ t }) {
                     <div className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-3 md:mb-4 relative">
                       {/* Number Badge (Square Background) */}
                       <div
-                        className={`absolute left-5 sm:left-7 md:left-9 top-[70%] -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-sm transition-all duration-300 ${
-                          activeIndex === i ? "bg-[#246BFD]" : "bg-[#D1E6FF]"
-                        }`}
+                        className={`absolute top-[70%] -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-sm transition-all duration-300 ${
+                          isRTL ? "right-5 sm:right-7 md:right-9" : "left-5 sm:left-7 md:left-9"
+                        } ${activeIndex === i ? "bg-[#246BFD]" : "bg-[#D1E6FF]"}`}
                       />
 
                       {/* Number */}
-                      <span className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black pl-1 md:pl-2">
+                      <span className={`relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black ${isRTL ? "pr-1 md:pr-2" : "pl-1 md:pl-2"}`}>
                         {String(i + 1).padStart(2, "0")}
                       </span>
 
@@ -237,7 +239,7 @@ export default function ServicesScroll({ t }) {
                       </h3>
                     </div>
 
-                    <p className="text-black text-sm sm:text-base md:text-lg lg:text-[20px] leading-relaxed pl-12 sm:pl-14 md:pl-16 lg:pl-[72px] max-w-xl">
+                    <p className={`text-black text-sm sm:text-base md:text-lg lg:text-[20px] leading-relaxed max-w-xl ${isRTL ? "pr-12 sm:pr-14 md:pr-16 lg:pr-[72px]" : "pl-12 sm:pl-14 md:pl-16 lg:pl-[72px]"}`}>
                       {service.description}
                     </p>
                   </div>

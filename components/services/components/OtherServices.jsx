@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
+import { useIsRTL } from "@/utils/useIsRTL";
 
 export function OtherServices({ t, excludeKeys = [] }) {
+  const isRTL = useIsRTL();
   const pathname = usePathname();
   const currentLang = (() => {
     const seg = pathname?.split("/").filter(Boolean)[0];
@@ -61,10 +63,14 @@ export function OtherServices({ t, excludeKeys = [] }) {
               {/* Details Link */}
               <Link
                 href={cap.hrefKey === "digital" ? `/${currentLang}/service-2` : cap.hrefKey === "emerging" ? `/${currentLang}/service-3` : "#"}
-                className="text-[#236BFD] text-2xl font-light flex items-center gap-2 hover:gap-3 transition-all mt-auto"
+                className={`text-[#236BFD] text-2xl font-light flex items-center gap-2 hover:gap-3 transition-all mt-auto ${isRTL ? "flex-row-reverse" : ""}`}
               >
                 {cap.details}
-                <FaArrowRightLong className="text-lg font-light" />
+                {isRTL ? (
+                  <FaArrowLeftLong className="text-lg font-light" />
+                ) : (
+                  <FaArrowRightLong className="text-lg font-light" />
+                )}
               </Link>
             </div>
           ))}

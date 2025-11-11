@@ -1,14 +1,17 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useIsRTL } from "@/utils/useIsRTL";
+import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
 
 // servicesData will be generated dynamically using translation keys
 
-export default function ServicesScroll({ t }) {
+export default function ServicesScroll({ t: tProp }) {
+  const { t: tHook, i18n } = useTranslation();
+  const t = tProp || tHook;
   const isRTL = useIsRTL();
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef(null);
@@ -17,27 +20,81 @@ export default function ServicesScroll({ t }) {
   const blueLayerRef = useRef(null);
   const itemsRef = useRef([]);
 
-  // Generate servicesData from translation keys
-  const servicesData = [
-    {
-      id: 1,
-      previewImage: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=600&fit=crop",
-      title: t("services.scroll.items.1.title"),
-      description: t("services.scroll.items.1.description"),
-    },
-    {
-      id: 2,
-      previewImage: "https://images.unsplash.com/photo-1573167243872-43c6433b9d40?w=800&h=600&fit=crop",
-      title: t("services.scroll.items.2.title"),
-      description: t("services.scroll.items.2.description"),
-    },
-    {
-      id: 3,
-      previewImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop",
-      title: t("services.scroll.items.3.title"),
-      description: t("services.scroll.items.3.description"),
-    },
-  ];
+  // Generate servicesData from translation keys - update when language changes
+  const servicesData = useMemo(() => {
+    if (!t) {
+      // Fallback data if t is not available
+      return [
+        {
+          id: 1,
+          previewImage: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=600&fit=crop",
+          title: "01 - Wireless and Fiber Connectivity Advisory",
+          description: "We are specialized in consultancy of wide range of spectrum analysis, coverage mapping, optimal antenna placement, Network CAPEX/OPEX for wireless deployments, IBS Design, Radio Frequency design and Optimization, critical mission, feasibility Studies & Route Planning, OSP Engineering, 5G Backhaul Solutions, SDN-Controlled Fiber Networks, Quantum Key Distribution (QKD), all of these services and consultancy within ensuring adherence to ITU, MCIT and CST regulations",
+        },
+        {
+          id: 2,
+          previewImage: "https://images.unsplash.com/photo-1573167243872-43c6433b9d40?w=800&h=600&fit=crop",
+          title: "02 - Smart City Strategies & Planning",
+          description: "With Technazm Consult you can Define long-term smart city goals aligned with sustainability, efficiency, and citizen well-being. Assess current infrastructure and identify areas for smart transformation. Digital Twins, Satellite, IoT and best practice",
+        },
+        {
+          id: 3,
+          previewImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop",
+          title: "03 - Network Performance",
+          description: "Capabilities in Benchmarking and Performance Optimization Strategies for Network Capacity Planning, Network RF-Interference Analysis, Level 3G Network Slicing Optimization can scale up your growth on very Balancing",
+        },
+      ];
+    }
+    
+    // Try to get translations - use direct t() calls
+    const item1Title = t("services.scroll.items.1.title");
+    const item1Desc = t("services.scroll.items.1.description");
+    
+    const item2Title = t("services.scroll.items.2.title");
+    const item2Desc = t("services.scroll.items.2.description");
+    
+    const item3Title = t("services.scroll.items.3.title");
+    const item3Desc = t("services.scroll.items.3.description");
+    
+    // Debug: Log translations to see what's being returned
+    if (typeof window !== "undefined" && process.env.NODE_ENV === "development") {
+      console.log("Translation check:", {
+        item1Title,
+        item1Desc: item1Desc?.substring(0, 50),
+        currentLang: i18n.language,
+      });
+    }
+    
+    // If translation returns the key itself, use fallback
+    const getValue = (translated, key, fallback) => {
+      // If t returns the key itself, it means translation not found
+      if (!translated || translated === key || translated.startsWith("services.scroll")) {
+        return fallback;
+      }
+      return translated;
+    };
+    
+    return [
+      {
+        id: 1,
+        previewImage: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=600&fit=crop",
+        title: getValue(item1Title, "services.scroll.items.1.title", "01 - Wireless and Fiber Connectivity Advisory"),
+        description: getValue(item1Desc, "services.scroll.items.1.description", "We are specialized in consultancy of wide range of spectrum analysis, coverage mapping, optimal antenna placement, Network CAPEX/OPEX for wireless deployments, IBS Design, Radio Frequency design and Optimization, critical mission, feasibility Studies & Route Planning, OSP Engineering, 5G Backhaul Solutions, SDN-Controlled Fiber Networks, Quantum Key Distribution (QKD), all of these services and consultancy within ensuring adherence to ITU, MCIT and CST regulations"),
+      },
+      {
+        id: 2,
+        previewImage: "https://images.unsplash.com/photo-1573167243872-43c6433b9d40?w=800&h=600&fit=crop",
+        title: getValue(item2Title, "services.scroll.items.2.title", "02 - Smart City Strategies & Planning"),
+        description: getValue(item2Desc, "services.scroll.items.2.description", "With Technazm Consult you can Define long-term smart city goals aligned with sustainability, efficiency, and citizen well-being. Assess current infrastructure and identify areas for smart transformation. Digital Twins, Satellite, IoT and best practice"),
+      },
+      {
+        id: 3,
+        previewImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop",
+        title: getValue(item3Title, "services.scroll.items.3.title", "03 - Network Performance"),
+        description: getValue(item3Desc, "services.scroll.items.3.description", "Capabilities in Benchmarking and Performance Optimization Strategies for Network Capacity Planning, Network RF-Interference Analysis, Level 3G Network Slicing Optimization can scale up your growth on very Balancing"),
+      },
+    ];
+  }, [t, i18n.language]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -92,7 +149,7 @@ export default function ServicesScroll({ t }) {
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [servicesData]);
 
   return (
     <div className="container py-10 md:py-20 min-h-screen px-4">

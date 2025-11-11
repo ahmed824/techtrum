@@ -138,20 +138,14 @@ export function ContactSection({ t }) {
                       <option value="" disabled>
                         {t("contact.service") || "Service"}
                       </option>
-                      <option value="consulting">
-                        {t("contact.services.consulting") || "Consulting"}
+                      <option value="telecom">
+                        {t("capabilities.telecom")}
                       </option>
-                      <option value="development">
-                        {t("contact.services.development") || "Development"}
+                      <option value="digital">
+                        {t("capabilities.digital")}
                       </option>
-                      <option value="support">
-                        {t("contact.services.support") || "Support"}
-                      </option>
-                      <option value="design">
-                        {t("contact.services.design") || "Design"}
-                      </option>
-                      <option value="integration">
-                        {t("contact.services.integration") || "Integration"}
+                      <option value="emerging">
+                        {t("capabilities.emerging")}
                       </option>
                     </select>
                     <FiChevronDown className="absolute right-4 sm:right-5 top-1/2 -translate-y-1/2 text-[#246BFD] text-lg pointer-events-none" />

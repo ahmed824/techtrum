@@ -112,14 +112,14 @@ const Form = () => {
                                 <option className="text-black" value="">
                                     {t("contact.placeholders.service")}
                                 </option>
-                                <option className="text-black" value="lighting">
-                                    {t("contact.serviceOptions.lighting")}
+                                <option className="text-black" value="telecom">
+                                    {t("capabilities.telecom")}
                                 </option>
-                                <option className="text-black" value="consultation">
-                                    {t("contact.serviceOptions.consultation")}
+                                <option className="text-black" value="digital">
+                                    {t("capabilities.digital")}
                                 </option>
-                                <option className="text-black" value="installation">
-                                    {t("contact.serviceOptions.installation")}
+                                <option className="text-black" value="emerging">
+                                    {t("capabilities.emerging")}
                                 </option>
                             </select>
                             <svg

@@ -242,16 +242,16 @@
     "services.scroll": {
         "items": {
             "1": {
-                "title": "Wireless and Fiber Connectivity Advisory",
-                "description": "We specialize in spectrum analysis, coverage mapping, optimal antenna placement, network CAPEX/OPEX, IBS design, RF design and optimization, mission-critical networks, feasibility studies and route planning, OSP engineering, 5G backhaul, SON-controlled fiber networks, and Quantum Key Distribution (QKD), ensuring compliance with ITU, MCIT, and CST regulations."
+                "title": "01 - Wireless and Fiber Connectivity Advisory",
+                "description": "We are specialized in consultancy of wide range of spectrum analysis, coverage mapping, optimal antenna placement, Network CAPEX/OPEX for wireless deployments, IBS Design, Radio Frequency design and Optimization, critical mission, feasibility Studies & Route Planning, OSP Engineering, 5G Backhaul Solutions, SDN-Controlled Fiber Networks, Quantum Key Distribution (QKD), all of these services and consultancy within ensuring adherence to ITU, MCIT and CST regulations"
             },
             "2": {
-                "title": "Smart City Strategies & Planning",
-                "description": "Define long-term smart city goals aligned with sustainability, efficiency, and citizen well-being. Assess infrastructure and identify transformation areas using Digital Twins, Satellite, IoT, and best practices."
+                "title": "02 - Smart City Strategies & Planning",
+                "description": "With Technazm Consult you can Define long-term smart city goals aligned with sustainability, efficiency, and citizen well-being. Assess current infrastructure and identify areas for smart transformation. Digital Twins, Satellite, IoT and best practice"
             },
             "3": {
-                "title": "Network Performance",
-                "description": "Benchmarking and performance optimization strategies for capacity planning, scalability, RF interference mitigation, band steering, and 5G network slicing optimization."
+                "title": "03 - Network Performance",
+                "description": "Capabilities in Benchmarking and Performance Optimization Strategies for Network Capacity Planning, Network RF-Interference Analysis, Level 3G Network Slicing Optimization can scale up your growth on very Balancing"
             },
             "4": {
                 "title": "Project Management",

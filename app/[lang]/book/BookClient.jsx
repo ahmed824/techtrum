@@ -75,6 +75,15 @@ export default function BookClient(){
                   aria-required="true"
                 >
                   <option className="text-black" value="">{t('book.placeholders.service')}</option>
+                  <option className="text-black" value="telecom">
+                    {t("capabilities.telecom")}
+                  </option>
+                  <option className="text-black" value="digital">
+                    {t("capabilities.digital")}
+                  </option>
+                  <option className="text-black" value="emerging">
+                    {t("capabilities.emerging")}
+                  </option>
                 </select>
                 <svg xmlns="http://www.w3.org/2000/svg" className="absolute end-6 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9394AA] pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />

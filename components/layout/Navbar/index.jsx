@@ -92,7 +92,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setIsMenuOpen(true)}
-            className="text-white text-2xl lg:hidden hover:text-[#246BFD] focus:outline-none focus:ring-2 focus:ring-[#246BFD] focus:ring-offset-2 focus:ring-offset-[#12283F]"
+            className="text-[#12283F] text-2xl lg:hidden hover:text-[#246BFD] focus:outline-none focus:ring-2 focus:ring-[#246BFD] focus:ring-offset-2 focus:ring-offset-[#12283F]"
             aria-label={t("navbar.menu") || "Open menu"}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"

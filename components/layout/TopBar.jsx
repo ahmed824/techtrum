@@ -7,7 +7,9 @@ import {
   FaInstagram,
   FaTwitter,
   FaLinkedinIn,
+  FaGlobe,
 } from "react-icons/fa";
+import { SiX } from "react-icons/si";
 import { usePathname, useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
 
@@ -36,71 +38,120 @@ export function TopBar() {
     const newPath = "/" + segments.join("/");
     router.push(newPath);
   };
+
   return (
     <div className="bg-[#12283F] relative z-10 text-white py-3">
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm gap-3 md:gap-0">
-        {/* Left side — phone and email */}
+        {/* Left side — Contact Info */}
         <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
+          {/* Website */}
+          <div className="flex items-center gap-2">
+            <FaGlobe className="text-[#246BFD]" />
+            <a
+              href="https://www.Techtrum.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#246BFD] transition"
+              suppressHydrationWarning
+            >
+              www.Techtrum.net
+            </a>
+          </div>
+
+          <span className="hidden md:block w-px h-5 bg-gray-600" />
+
+          {/* Phone 1 */}
           <div className="flex items-center gap-2">
             <FaPhone className="text-[#246BFD]" />
-            <span suppressHydrationWarning>{t("topBar.phone", { defaultValue: "0539669980" })}</span>
+            <a
+              href="tel:+966554442151"
+              className="hover:text-[#246BFD] transition"
+              suppressHydrationWarning
+            >
+              +966 55 444 2151
+            </a>
           </div>
+
           <span className="hidden md:block w-px h-5 bg-gray-600" />
+
+          {/* Email */}
           <div className="flex items-center gap-2">
             <FaEnvelope className="text-[#246BFD]" />
-            <span suppressHydrationWarning>{t("topBar.email", { defaultValue: "info@fixerfm.com" })}</span>
+            <a
+              href="mailto:Info@Techtrum.net"
+              className="hover:text-[#246BFD] transition"
+              suppressHydrationWarning
+            >
+              Info@Techtrum.net
+            </a>
           </div>
         </div>
 
-        {/* Right side — social icons + language */}
+        {/* Right side — Social Icons + Language Switcher */}
         <div className="flex items-center gap-4">
-          {/* Social icons (hidden on small screens) */}
-          <div className="hidden md:flex gap-3" role="list" aria-label={t("topBar.socialAria", { defaultValue: "Social media links" })}>
-            <a
+          {/* Social Icons (hidden on small screens) */}
+          <div
+            className="hidden md:flex gap-3"
+            role="list"
+            aria-label={t("topBar.socialAria", {
+              defaultValue: "Social media links",
+            })}
+          >
+            {/* Facebook - MISSING REAL LINK */}
+            {/* <a
               role="listitem"
               href="#"
+              target="_blank"
+              rel="noopener noreferrer"
               className="cursor-pointer hover:text-[#246BFD] transition"
               aria-label="Facebook"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <FaFacebookF aria-hidden="true" />
-            </a>
-            <a
+            </a> */}
+
+            {/* Instagram - MISSING REAL LINK */}
+            {/* <a
               role="listitem"
               href="#"
+              target="_blank"
+              rel="noopener noreferrer"
               className="cursor-pointer hover:text-[#246BFD] transition"
               aria-label="Instagram"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <FaInstagram aria-hidden="true" />
-            </a>
+            </a> */}
+
+            {/* X (Twitter) */}
             <a
               role="listitem"
-              href="#"
-              className="cursor-pointer hover:text-[#246BFD] transition"
-              aria-label="Twitter"
+              href="https://x.com/techtrum_ksa?s=11&t=eztNfcyajtI5kYT9l97_rQ"
               target="_blank"
               rel="noopener noreferrer"
+              className="cursor-pointer hover:text-[#246BFD] transition"
+              aria-label="X (Twitter)"
             >
-              <FaTwitter aria-hidden="true" />
+              <SiX aria-hidden="true" />
             </a>
+
+            {/* LinkedIn */}
             <a
               role="listitem"
-              href="#"
+              href="https://www.linkedin.com/in/techtrum?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+              target="_blank"
+              rel="noopener noreferrer"
               className="cursor-pointer hover:text-[#246BFD] transition"
               aria-label="LinkedIn"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <FaLinkedinIn aria-hidden="true" />
             </a>
           </div>
 
-
-          {/* Language switcher — always visible */}
-          <div className="flex gap-2 md:ml-6 text-center md:text-start" role="group" aria-label="Language switcher">
+          {/* Language Switcher */}
+          <div
+            className="flex gap-2 md:ml-6 text-center md:text-start"
+            role="group"
+            aria-label="Language switcher"
+          >
             <button
               type="button"
               onClick={() => switchLang("ar")}

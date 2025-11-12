@@ -239,27 +239,66 @@
             "description": "By guaranteeing delivered services and products, Techtrum ensures long system life and sustainability."
         }
     },
-    "services.scroll": {
-        "items": {
-            "1": {
-                "title": "01 - Wireless and Fiber Connectivity Advisory",
-                "description": "We are specialized in consultancy of wide range of spectrum analysis, coverage mapping, optimal antenna placement, Network CAPEX/OPEX for wireless deployments, IBS Design, Radio Frequency design and Optimization, critical mission, feasibility Studies & Route Planning, OSP Engineering, 5G Backhaul Solutions, SDN-Controlled Fiber Networks, Quantum Key Distribution (QKD), all of these services and consultancy within ensuring adherence to ITU, MCIT and CST regulations"
-            },
-            "2": {
-                "title": "02 - Smart City Strategies & Planning",
-                "description": "With Technazm Consult you can Define long-term smart city goals aligned with sustainability, efficiency, and citizen well-being. Assess current infrastructure and identify areas for smart transformation. Digital Twins, Satellite, IoT and best practice"
-            },
-            "3": {
-                "title": "03 - Network Performance",
-                "description": "Capabilities in Benchmarking and Performance Optimization Strategies for Network Capacity Planning, Network RF-Interference Analysis, Level 3G Network Slicing Optimization can scale up your growth on very Balancing"
-            },
-            "4": {
-                "title": "Project Management",
-                "description": "Professional project management ensuring timely delivery and quality across telecom and smart city initiatives with expert oversight and coordination."
-            },
-            "5": {
-                "title": "MEP Engineering",
-                "description": "Comprehensive mechanical, electrical, and plumbing engineering solutions for modern infrastructure and smart city developments using cutting-edge technology."
+    "capabilities": {
+        "telecom": "Telecommunications & Smart Cities",
+        "digital": "Digital Transformation",
+        "emerging": "Emerging Technologies & Innovation"
+    },
+    "services": {
+        "first": {
+            "items": {
+                "1": {
+                    "title": "01 - Wireless and Fiber Connectivity Advisory",
+                    "description": "We are specialized in consultancy of wide range of spectrum analysis, coverage mapping, optimal antenna placement, Network CAPEX/OPEX for wireless deployments, IBS Design, Radio Frequency design and Optimization, critical mission, feasibility Studies & Route Planning, OSP Engineering, 5G Backhaul Solutions, SDN-Controlled Fiber Networks, Quantum Key Distribution (QKD), all of these services and consultancy within ensuring adherence to ITU, MCIT and CST regulations"
+                },
+                "2": {
+                    "title": "02 - Smart City Strategies & Planning",
+                    "description": "With Techtrum Consult you can Define long-term smart city goals aligned with sustainability, efficiency, and citizen well-being. Assess current infrastructure and identify areas for smart transformation. Digital Twins, Satellite, IoT and best practice"
+                },
+                "3": {
+                    "title": "03 - Network Performance",
+                    "description": "Capabilities in Benchmarking and Performance Optimization Strategies for Network Capacity Planning, Network RF-Interference Analysis, Level 3G Network Slicing Optimization can scale up your growth on very Balancing"
+                }
+            }
+        },
+        "second": {
+            "items": {
+                "1": {
+                    "title": "01 - IT Governance Consulting",
+                    "description": "Techtrum Consult has the expertise to perform IT governance work and provide consulting in technical governance, risk management, compliance, and adoption of best practices in digital infrastructure and implementation of international standards such as ISO 31000, ISO 27001, ISO 38500, COBIT, ITIL, and setting KPIs"
+                },
+                "2": {
+                    "title": "02 - Digital Transformation Consulting",
+                    "description": "We have extensive experience in consulting services such as digital strategy, creating and developing action plans. We can provide our consulting to elevate organizations through automating and improving processes, then customer experience (CX) with digital alignment and ensuring the quality of our consulting through training programs and change management"
+                },
+                "3": {
+                    "title": "03 - Data Management Consulting",
+                    "description": "We have at Techtrum Consult an excellent team specialized in data management. We provide consulting studies in data strategies and governance, and we also provide edge data management solutions"
+                },
+                "4": {
+                    "title": "04 - Digital Transformation Solutions & Software",
+                    "description": "Techtrum Consult has expanded in mapping a comprehensive range of digital transformation solutions on a large scale locally and globally, so we have built partnerships for the best solutions that can be provided without any effort to write software codes, such as Origami and Simply Cast programs"
+                }
+            }
+        },
+        "third": {
+            "items": {
+                "1": {
+                    "title": "01 - Artificial Intelligence & Machine Learning",
+                    "description": "At Techtrum Consult, we provide consulting in automation solutions and strategies, studies and development of artificial intelligence and machine learning"
+                },
+                "2": {
+                    "title": "02 - Metaverse & Extended Reality (XR) Consulting",
+                    "description": "As an extension of our capabilities and expertise in emerging technologies, we provide specialized consulting in virtual and augmented reality, VR/AR applications, digital twin simulations, and metaverse platform development"
+                },
+                "3": {
+                    "title": "03 - Technology & Sustainability Consulting Studies",
+                    "description": "We believe in our positive impact in providing specialized reports on Environmental, Social and Governance (ESG), public policy, impact assessment, and on the solutions side we provide carbon emissions tracking solutions and AI and IoT ecosystem solutions"
+                },
+                "4": {
+                    "title": "04 - Innovation Business Consulting Services",
+                    "description": "We focus our specialized consulting in innovation on research and development, adopting innovative technologies, developing prototypes and minimum viable products (MVP), climate technology consulting, innovation strategy blueprints, and developing proof of concept (PoC) models"
+                }
             }
         }
     },

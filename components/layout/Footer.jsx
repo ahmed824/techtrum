@@ -20,7 +20,7 @@ export function Footer() {
   };
 
   // Helper function to create language-aware links
-  const getLangLink = (path: string) => {
+  const getLangLink = (path) => {
     return `/${lang}${path}`;
   };
 

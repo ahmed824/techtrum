@@ -7,11 +7,25 @@ import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function FirstServicesScroll({ t: tProp }) {
+// Static images only (4 items for second section)
+const staticImages = [
+  // 01 - IT Governance Consulting (compliance, standards, governance)
+  "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop",
+
+  // 02 - Digital Transformation Consulting (strategy, business transformation)
+  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
+
+  // 03 - Data Management Consulting (data analytics, databases)
+  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+
+  // 04 - Digital Transformation Solutions & Software (software, no-code platforms)
+  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+];
+
+export default function SecondServicesScroll({ t: tProp }) {
   const { t: tHook, i18n } = useTranslation();
   const t = tProp || tHook;
   const isRTL = useIsRTL();
-
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef(null);
   const imageContainerRef = useRef(null);
@@ -19,24 +33,17 @@ export default function FirstServicesScroll({ t: tProp }) {
   const blueLayerRef = useRef(null);
   const itemsRef = useRef([]);
 
+  // Build servicesData from translation keys only (no fallback)
   const servicesData = useMemo(() => {
-    const items = [];
-    for (let i = 1; i <= 3; i++) {
-      const titleKey = `services.first.items.${i}.title`;
-      const descKey = `services.first.items.${i}.description`;
-      const title = t(titleKey);
-      const description = t(descKey);
-
-      items.push({
-        id: i,
-        previewImage: `https://images.unsplash.com/photo-1573164713714-d95e436ab8d${
-          i === 1 ? "d6" : i === 2 ? "7243872-43c6433b9d40" : "55"
-        }?w=800&h=600&fit=crop`,
-        title,
-        description,
-      });
-    }
-    return items;
+    return Array.from({ length: 4 }, (_, i) => {
+      const index = i + 1;
+      return {
+        id: index,
+        previewImage: staticImages[i],
+        title: t(`services.second.items.${index}.title`),
+        description: t(`services.second.items.${index}.description`),
+      };
+    });
   }, [t, i18n.language]);
 
   useEffect(() => {
@@ -111,9 +118,7 @@ export default function FirstServicesScroll({ t: tProp }) {
             </svg>
           </div>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 text-center sm:text-start">
-            {t
-              ? t("capabilities.telecom")
-              : "Telecommunications & Smart Cities"}
+            {t("capabilities.digital")}
           </h2>
         </div>
       </div>
@@ -139,6 +144,7 @@ export default function FirstServicesScroll({ t: tProp }) {
 
         <div className="container mx-auto px-4 max-w-7xl pb-10 md:pb-20 relative">
           <div className="grid lg:grid-cols-[45%_55%] gap-8 lg:gap-16 xl:gap-20">
+            {/* Image Side */}
             <div
               ref={imageContainerRef}
               className="lg:h-screen grid place-items-center"
@@ -213,6 +219,7 @@ export default function FirstServicesScroll({ t: tProp }) {
               </div>
             </div>
 
+            {/* Text Side */}
             <div className="relative space-y-20 md:space-y-32 lg:space-y-40 py-12 md:py-16 lg:py-24">
               <div
                 className={`absolute top-14 md:top-20 lg:top-28 bottom-20 md:bottom-32 lg:bottom-40 w-[1px] bg-[#246BFD] ${

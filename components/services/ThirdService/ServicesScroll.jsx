@@ -7,7 +7,15 @@ import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function FirstServicesScroll({ t: tProp }) {
+// Static placeholder images (4 items)
+const staticImages = [
+  "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop", // AI/ML
+  "https://files.catbox.moe/ucibly.png", // XR/Metaverse
+  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop", // Sustainability
+  "https://files.catbox.moe/hwf1jk.png", // Innovation
+]; 
+
+export default function ThirdServicesScroll({ t: tProp }) {
   const { t: tHook, i18n } = useTranslation();
   const t = tProp || tHook;
   const isRTL = useIsRTL();
@@ -19,24 +27,17 @@ export default function FirstServicesScroll({ t: tProp }) {
   const blueLayerRef = useRef(null);
   const itemsRef = useRef([]);
 
+  // Build data from translation keys only
   const servicesData = useMemo(() => {
-    const items = [];
-    for (let i = 1; i <= 3; i++) {
-      const titleKey = `services.first.items.${i}.title`;
-      const descKey = `services.first.items.${i}.description`;
-      const title = t(titleKey);
-      const description = t(descKey);
-
-      items.push({
-        id: i,
-        previewImage: `https://images.unsplash.com/photo-1573164713714-d95e436ab8d${
-          i === 1 ? "d6" : i === 2 ? "7243872-43c6433b9d40" : "55"
-        }?w=800&h=600&fit=crop`,
-        title,
-        description,
-      });
-    }
-    return items;
+    return Array.from({ length: 4 }, (_, i) => {
+      const index = i + 1;
+      return {
+        id: index,
+        previewImage: staticImages[i],
+        title: t(`services.third.items.${index}.title`),
+        description: t(`services.third.items.${index}.description`),
+      };
+    });
   }, [t, i18n.language]);
 
   useEffect(() => {
@@ -106,14 +107,12 @@ export default function FirstServicesScroll({ t: tProp }) {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                d="M13 10V3L4 14h7v7l9-11h-7z"
               />
             </svg>
           </div>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 text-center sm:text-start">
-            {t
-              ? t("capabilities.telecom")
-              : "Telecommunications & Smart Cities"}
+            {t("capabilities.emerging")}
           </h2>
         </div>
       </div>
@@ -123,6 +122,7 @@ export default function FirstServicesScroll({ t: tProp }) {
         ref={containerRef}
         dir={isRTL ? "rtl" : "ltr"}
       >
+        {/* Decorative Pattern */}
         <div
           className={`absolute z-0 top-20 w-[500px] h-[500px] pointer-events-none opacity-85 hidden lg:block ${
             isRTL ? "-right-20" : "-left-20"
@@ -139,6 +139,7 @@ export default function FirstServicesScroll({ t: tProp }) {
 
         <div className="container mx-auto px-4 max-w-7xl pb-10 md:pb-20 relative">
           <div className="grid lg:grid-cols-[45%_55%] gap-8 lg:gap-16 xl:gap-20">
+            {/* Image Side */}
             <div
               ref={imageContainerRef}
               className="lg:h-screen grid place-items-center"
@@ -213,6 +214,7 @@ export default function FirstServicesScroll({ t: tProp }) {
               </div>
             </div>
 
+            {/* Text Side */}
             <div className="relative space-y-20 md:space-y-32 lg:space-y-40 py-12 md:py-16 lg:py-24">
               <div
                 className={`absolute top-14 md:top-20 lg:top-28 bottom-20 md:bottom-32 lg:bottom-40 w-[1px] bg-[#246BFD] ${
